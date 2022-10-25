@@ -25,9 +25,13 @@
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
+    "react-icons": "^4.6.0",
+    "react-youtube": "^10.0.0",
+    "sanity-plugin-asset-source-unsplash": "^0.2.4",
+    "sanity-plugin-dashboard-widget-document-list": "^0.0.13",
+    "sanity-plugin-media-library": "^2.1.1",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/briannelson95/ross-rings-app.git"
