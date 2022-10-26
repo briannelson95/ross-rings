@@ -19,6 +19,11 @@ export default {
             type: 'contact'
         },
         {
+            name: 'logo',
+            title: 'Logo',
+            type: 'image'
+        },
+        {
             name: 'navigation',
             title: 'Navigation Menu',
             type: 'array',

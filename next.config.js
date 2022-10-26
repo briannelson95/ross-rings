@@ -11,9 +11,6 @@ const nextConfig = {
   rewrites: () => [STUDIO_REWRITE],
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    appDir: true,
-  },
   images: {
     domains: ['cdn.sanity.io'],
   },
