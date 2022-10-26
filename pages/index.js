@@ -3,25 +3,27 @@ import { homepage } from "../lib/queries";
 import SEO from '../components/SEO'
 import Image from "next/image";
 import { urlFor } from '../lib/modules'
-
+import Navbar from '../components/Navbar';
 
 export default function Home({ data }) {
-    // console.log(data)
-    const pageData = data.pageData[0]
-    console.log(urlFor(data.siteSettings.logo).url)
+    console.log(data)
+    const pageData = data.pageData[0];
+    const mobile = data.siteSettings.mobileMenu;
+    const siteSettings = data.siteSettings;
+    
     return (
         <>
             <SEO 
-                title={`${pageData.title} - ${data.siteSettings.title}`} 
+                title={`${data.siteSettings.title}`} 
+                icon={urlFor(siteSettings.seo.icon).url()}  
             />
-            <main>
-                <Image 
-                    src={urlFor(data.siteSettings.logo).url()}
-                    width={532}
-                    height={287}
-                    className="w-40"
-                />
-                <h1 className="text-2xl font-bold">{data.siteSettings.title}</h1>
+            <Navbar
+                mobileMenu={mobile}
+            />
+            <main className="h-screen">
+                <div className="flex justify-center items-center my-4">
+                    <h1 className="text-2xl font-medium">{pageData.hero.tagline}</h1>
+                </div>
             </main>
         </>
     )

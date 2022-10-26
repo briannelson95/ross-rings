@@ -12,6 +12,7 @@ import openGraph from './objects/openGraph'
 import blockContent from './objects/blockContent'
 import products from './documents/products'
 import contact from './objects/contact'
+import hero from './objects/hero'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,5 +32,6 @@ export default createSchema({
     mainImage,
     openGraph,
     contact,
+    hero,
   ]),
 })

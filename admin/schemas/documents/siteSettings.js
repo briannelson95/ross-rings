@@ -37,6 +37,25 @@ export default {
             ]
         },
         {
+            name: 'mobileMenu',
+            title: 'Mobile Menu',
+            type: 'array',
+            of: [
+                {
+                    title: 'Pages',
+                    type: 'reference',
+                    to: [
+                        {type: 'page'}
+                    ]
+                },
+                {
+                    name: 'logo',
+                    title: 'Logo',
+                    type: 'mainImage'
+                }
+            ]
+        },
+        {
             name: 'seo',
             title: 'SEO',
             type: 'openGraph'

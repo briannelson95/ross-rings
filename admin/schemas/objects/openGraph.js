@@ -29,6 +29,11 @@ export default {
             title: 'Image',
             type: 'image',
             description: 'Facebook recommends 1200x630 (will be auto resized)'
+        },
+        {
+            name: 'icon',
+            title: 'Icon',
+            type: 'image'
         }
     ],
 }
