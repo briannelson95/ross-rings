@@ -12,13 +12,14 @@ export default function Home({ data }) {
     return (
         <>
             <SEO 
-                title={data.siteSettings.title} 
+                title={`${pageData.title} - ${data.siteSettings.title}`} 
             />
             <main>
                 <Image 
                     src={urlFor(data.siteSettings.logo).url()}
                     width={532}
                     height={287}
+                    className="w-40"
                 />
                 <h1 className="text-2xl font-bold">{data.siteSettings.title}</h1>
             </main>
