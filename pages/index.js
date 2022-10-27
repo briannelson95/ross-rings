@@ -25,15 +25,15 @@ export default function Home({ data }) {
                 logo={urlFor(siteSettings.logo).url()}
             />
             <main className="h-screen w-screen overflow-hidden p-4">
-                <div className="flex justify-center items-center my-4 md:grid md:grid-cols-5 md:gap-4 h-[85vh]">
-                    <div className="md:col-span-2">
+                <div className="grid grid-cols-1 my-4 gap-4 md:grid-cols-5">
+                    <div className="col-span-1 md:col-span-2">
                         <h1 className="text-2xl font-medium mb-2">{pageData.hero.tagline}</h1>
                         <Button
                             text={pageData.hero.cta.title}
                             href={pageData.hero.cta.url.current}
                         />
                     </div>
-                    <div className='md:col-span-3 w-full h-full rounded-xl' style={{backgroundImage: `url(${urlFor(pageData.hero.image).url()})`, backgroundSize: 'cover'}}>
+                    <div className='col-span-1 md:col-span-3 w-full h-60 rounded-xl md:h-[85vh]' style={{backgroundImage: `url(${urlFor(pageData.hero.image).url()})`, backgroundSize: 'cover'}}>
                         {/* <Image
                             src={urlFor(pageData.hero.image).url()}
                             height={100}
