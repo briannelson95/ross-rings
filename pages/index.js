@@ -25,13 +25,21 @@ export default function Home({ data }) {
                 logo={urlFor(siteSettings.logo).url()}
             />
             <main className="h-screen w-screen overflow-hidden p-4">
-                <div className="flex justify-center items-center my-4 md:block">
-                    <div>
-                        <h1 className="text-2xl font-medium">{pageData.hero.tagline}</h1>
+                <div className="flex justify-center items-center my-4 md:grid md:grid-cols-5 md:gap-4 h-[85vh]">
+                    <div className="md:col-span-2">
+                        <h1 className="text-2xl font-medium mb-2">{pageData.hero.tagline}</h1>
                         <Button
                             text={pageData.hero.cta.title}
                             href={pageData.hero.cta.url.current}
                         />
+                    </div>
+                    <div className='md:col-span-3 w-full h-full rounded-xl' style={{backgroundImage: `url(${urlFor(pageData.hero.image).url()})`, backgroundSize: 'cover'}}>
+                        {/* <Image
+                            src={urlFor(pageData.hero.image).url()}
+                            height={100}
+                            width={100}
+                            className='w-100'
+                        /> */}
                     </div>
                 </div>
             </main>
@@ -39,7 +47,7 @@ export default function Home({ data }) {
     )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data = await client.fetch(homepage)
   
     return {
