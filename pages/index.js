@@ -25,6 +25,11 @@ export default function Home({ data }) {
             <main className="h-screen">
                 <div className="flex justify-center items-center my-4">
                     <h1 className="text-2xl font-medium">{pageData.hero.tagline}</h1>
+                    <div>
+                        <Link href={`${pageData.hero.cta.url.current}`}>
+                            {pageData.hero.cta.title}
+                        </Link>
+                    </div>
                 </div>
             </main>
         </>
