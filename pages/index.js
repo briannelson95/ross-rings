@@ -4,6 +4,7 @@ import SEO from '../components/SEO'
 import Image from "next/image";
 import { urlFor } from '../lib/modules'
 import Navbar from '../components/Navbar';
+import Link from 'next/Link';
 
 export default function Home({ data }) {
     // console.log(data)
