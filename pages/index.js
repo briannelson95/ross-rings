@@ -4,6 +4,7 @@ import SEO from '../components/SEO'
 import Image from "next/image";
 import { urlFor } from '../lib/modules'
 import Navbar from '../components/Navbar';
+import Button from '../components/Button';
 import Link from 'next/link';
 
 export default function Home({ data }) {
@@ -23,13 +24,14 @@ export default function Home({ data }) {
                 navigation={siteSettings.navigation}
                 logo={urlFor(siteSettings.logo).url()}
             />
-            <main className="h-screen">
-                <div className="flex justify-center items-center my-4">
-                    <h1 className="text-2xl font-medium">{pageData.hero.tagline}</h1>
+            <main className="h-screen w-screen overflow-hidden p-4">
+                <div className="flex justify-center items-center my-4 md:block">
                     <div>
-                        <Link href={`${pageData.hero.cta.url.current}`}>
-                            {pageData.hero.cta.title}
-                        </Link>
+                        <h1 className="text-2xl font-medium">{pageData.hero.tagline}</h1>
+                        <Button
+                            text={pageData.hero.cta.title}
+                            href={pageData.hero.cta.url.current}
+                        />
                     </div>
                 </div>
             </main>
