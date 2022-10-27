@@ -6,7 +6,7 @@ import { urlFor } from '../lib/modules'
 import Navbar from '../components/Navbar';
 
 export default function Home({ data }) {
-    console.log(data)
+    // console.log(data)
     const pageData = data.pageData[0];
     const mobile = data.siteSettings.mobileMenu;
     const siteSettings = data.siteSettings;
@@ -19,6 +19,8 @@ export default function Home({ data }) {
             />
             <Navbar
                 mobileMenu={mobile}
+                navigation={siteSettings.navigation}
+                logo={urlFor(siteSettings.logo).url()}
             />
             <main className="h-screen">
                 <div className="flex justify-center items-center my-4">
