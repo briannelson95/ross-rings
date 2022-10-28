@@ -7,7 +7,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
         <nav className="bg-white text-black w-screen h-16 shadow-md shadow-light-blue-100/50 overflow-hidden">
             {/* mobile menu */}
             <div className="h-full flex justify-between items-center mx-4 md:hidden">
-                <Link href="/">
+                <Link href={navigation[1].slug.current}>
                     {navigation[1].title}
                 </Link>
                 <Link href="/">
@@ -17,7 +17,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
                         height={50}
                     />
                 </Link>
-                <Link href="/">
+                <Link href={navigation[2].slug.current}>
                     {navigation[2].title}
                 </Link>
             </div>
