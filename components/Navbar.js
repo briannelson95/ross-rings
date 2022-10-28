@@ -8,7 +8,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
             {/* mobile menu */}
             <div className="h-full flex justify-between items-center mx-4 md:hidden">
                 <Link href="/">
-                    {mobileMenu[0].title}
+                    {navigation[1].title}
                 </Link>
                 <Link href="/">
                     <Image 
@@ -18,7 +18,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
                     />
                 </Link>
                 <Link href="/">
-                    {mobileMenu[2].title}
+                    {navigation[2].title}
                 </Link>
             </div>
             {/* desktop nav */}
