@@ -6,6 +6,7 @@
     "dev": "next dev",
     "prebuild": "echo 'Building Sanity to public/admin' && cd admin && yarn && npx @sanity/cli build ../public/admin -y && echo 'Done'",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "sanity": "cd admin && sanity start",
     "lint": "next lint"
@@ -15,6 +16,7 @@
     "next": "13.0.0",
     "next-sanity": "^1.0.1",
     "next-sanity-image": "^4.1.0",
+    "next-sitemap": "^3.1.29",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
