@@ -31,7 +31,7 @@ export default function Products({ data }) {
           {products.map((item, index) => (
             <div key={index} className='border p-2 border-dark-blue-200 rounded-md hover:border-dark-blue-400 ease-in-out duration-200'>
               <Link 
-                href={item.link}
+                href={`products/${item.slug.current}`}
                 className=''
               >
                 <div>

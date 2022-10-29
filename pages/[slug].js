@@ -6,14 +6,14 @@ import { urlFor } from '../lib/modules';
 import Navbar from '../components/Navbar';
 
 export default function Page({ data }) {
-    console.log(data);
+    // console.log(data);
     const pageData = data.pageData;
     const mobile = data.siteSettings.mobileMenu;
     const siteSettings = data.siteSettings;
     return (
         <>
             <SEO 
-                title={`${data.siteSettings.title}`} 
+                title={`${pageData.title} - ${data.siteSettings.title}`} 
                 icon={urlFor(siteSettings.seo.icon).url()}  
             />
             <Navbar
