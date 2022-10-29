@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "sanity": "cd admin && sanity start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@next/font": "^13.0.0",
