@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@next/font": "^13.0.0",
+    "groq": "^2.33.2",
     "next": "13.0.0",
     "next-sanity": "^1.0.1",
     "next-sanity-image": "^4.1.0",
