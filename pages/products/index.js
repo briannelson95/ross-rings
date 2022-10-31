@@ -29,7 +29,7 @@ export default function Products({ data }) {
       />
       <main className='p-4'>
         <div className='flex justify-center'>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-3 w-3/4'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-3 md:w-3/4'>
             {products.map((item, index) => (
               // <Link 
               //   href={`products/${item.slug.current}`}

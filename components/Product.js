@@ -19,7 +19,7 @@ const Product = ({ href, name, price, type, image }) => {
                     <h3 className='text-xl font-semibold'>{name}</h3>
                     <p className='text-lg'>${price}.00</p>
                   </div>
-                  <button className="bg-dark-blue-900 text-white h-12 w-12 rounded-full hover:bg-dark-blue-800 flex justify-center align-bottom">
+                  <button className="bg-light-blue-100 text-dark-blue-900 h-12 w-12 rounded-full hover:bg-dark-blue-800 flex justify-center align-bottom">
                     <HiOutlineShoppingCart className="h-8 w-8 my-2" />
                     {/* <HiPlus className="hidden h-8 w-8 ease-in-out duration-200 hover:inline-block" /> */}
                   </button>
