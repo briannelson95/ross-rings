@@ -20,6 +20,11 @@ export default {
             description: 'Place the products Etsy link here'
         },
         {
+            name: 'price',
+            title: 'Price',
+            type: 'number'
+        },
+        {
             name: 'type',
             title: 'Product Type',
             type: 'string',
