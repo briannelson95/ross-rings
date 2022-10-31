@@ -2,13 +2,12 @@ import Link from "next/link";
 import { urlFor } from "../lib/modules";
 import { HiOutlineShoppingCart, HiPlus } from 'react-icons/hi';
 
-const Product = ({ href, name, price, type, index, image }) => {
+const Product = ({ href, name, price, type, image }) => {
     return ( 
         <>
             <Link 
               href={`products/${href}`}
               className=''
-              key={index}
             >
               <div  
                 className='border border-dark-blue-200 rounded-lg hover:border-dark-blue-400 ease-in-out duration-200 md:col-span-1'

@@ -53,8 +53,8 @@ export default function Products({ data }) {
               //   </div>
               // </Link>
               <Product
+                key={index}
                 href={item.slug.current}
-                index={index}
                 type={item.type}
                 name={item.title}
                 price={item.price}
