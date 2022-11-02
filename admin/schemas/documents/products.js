@@ -49,6 +49,11 @@ export default {
             name: 'description',
             title: 'Description',
             type: 'blockContent'
+        },
+        {
+            name: 'gallery',
+            title: 'Image Gallery',
+            type: 'gallery'
         }
     ],
 }

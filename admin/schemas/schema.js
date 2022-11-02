@@ -14,6 +14,7 @@ import products from './documents/products'
 import contact from './objects/contact'
 import hero from './objects/hero'
 import cta from './objects/cta'
+import gallery from './objects/gallery'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -35,5 +36,6 @@ export default createSchema({
     contact,
     hero,
     cta,
+    gallery,
   ]),
 })
