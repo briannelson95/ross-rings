@@ -1,16 +1,16 @@
 import Image from "next/image";
 import { useState } from "react";
+import LightBox from "../../components/LightBox";
 import Navbar from "../../components/Navbar";
 import SEO from "../../components/SEO";
 import { urlFor } from "../../lib/modules";
 import { product } from "../../lib/queries";
 import { client } from "../../lib/sanity";
+import { HiArrowCircleRight, HiArrowCircleLeft } from "react-icons/hi";
 
 export default function Page({ data }) {
-    // console.log(data);
     const productData = data.productData;
     const relatedImages = productData.gallery;
-    // console.log(urlFor(relatedImages[0]).url())
     const mobile = data.siteSettings.mobileMenu;
     const siteSettings = data.siteSettings;
 
@@ -63,10 +63,14 @@ export default function Page({ data }) {
             />
             <main className="p-4 flex justify-center">
                 {lightboxDisplay ?
-                    <div className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-between bg-black/50" onClick={hideLightbox}>
-                        <button onClick={showPrev} className='text-2xl mx-4'>⭠</button>
+                    <div className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-between bg-black/75" onClick={hideLightbox}>
+                        <button onClick={showPrev} className='mx-4 text-5xl'>
+                            <HiArrowCircleLeft width={20} height={20} className='text-light-blue-100' />
+                        </button>
                         <Image src={urlFor(imagesToShow).url()} width={1000} height={1000} className='w-3/4' />
-                        <button onClick={showNext} className='text-2xl mx-4'>⭢</button>
+                        <button onClick={showNext} className='mx-4 text-5xl'>
+                            <HiArrowCircleRight width={20} height={20} className='text-light-blue-100' />
+                        </button>
                     </div>
                 : ''}
                 <section className="grid grid-cols-1 gap-4 md:grid-cols-4 md:w-3/4">
