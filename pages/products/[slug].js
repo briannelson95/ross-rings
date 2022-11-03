@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import SEO from "../../components/SEO";
 import { urlFor } from "../../lib/modules";
@@ -12,6 +13,43 @@ export default function Page({ data }) {
     // console.log(urlFor(relatedImages[0]).url())
     const mobile = data.siteSettings.mobileMenu;
     const siteSettings = data.siteSettings;
+
+    const [lightboxDisplay, setLighboxDisplay] = useState(false);
+    const [imagesToShow, setImagestoShow] =useState('');
+
+    const showImage = (image) => {
+        setImagestoShow(image)
+        setLighboxDisplay(true)
+    }
+
+    const hideLightbox = () => {
+        setLighboxDisplay(false);
+    }
+
+    const showNext = (e) => {
+        e.stopPropagation()
+        let currentIndex = relatedImages.indexOf(imagesToShow)
+        if(currentIndex >= relatedImages.length - 1) {
+            setLighboxDisplay(false)
+        }
+        else {
+            let nextImage = relatedImages[currentIndex + 1]
+            setImagestoShow(nextImage)
+        }
+    }
+
+    const showPrev = (e) => {
+        e.stopPropagation()
+        let currentIndex = relatedImages.indexOf(imagesToShow)
+          if(currentIndex <= 0) {
+          setLighboxDisplay(false)
+        }
+        else {
+          let nextImage = relatedImages[currentIndex - 1]
+          setImagestoShow(nextImage)
+        }
+    }
+
     return (
         <>
             <SEO 
@@ -24,6 +62,13 @@ export default function Page({ data }) {
                 logo={urlFor(siteSettings.logo).url()}
             />
             <main className="p-4 flex justify-center">
+                {lightboxDisplay ?
+                    <div className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-between bg-black/50" onClick={hideLightbox}>
+                        <button onClick={showPrev} className='text-2xl mx-4'>⭠</button>
+                        <Image src={urlFor(imagesToShow).url()} width={1000} height={1000} className='w-1/2' />
+                        <button onClick={showNext} className='text-2xl mx-4'>⭢</button>
+                    </div>
+                : ''}
                 <section className="grid grid-cols-1 gap-4 md:grid-cols-4 md:w-3/4">
                     <div className="md:col-span-2 p-5 border border-light-blue-300 rounded-lg">
                         <Image
@@ -46,6 +91,7 @@ export default function Page({ data }) {
                                             src={urlFor(item.asset._ref).url()}
                                             width={100}
                                             height={100}
+                                            onClick={() => showImage(item)}
                                         />
                                     </div>
                                 ))}
