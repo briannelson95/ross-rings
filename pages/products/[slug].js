@@ -65,7 +65,7 @@ export default function Page({ data }) {
                 {lightboxDisplay ?
                     <div className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-between bg-black/50" onClick={hideLightbox}>
                         <button onClick={showPrev} className='text-2xl mx-4'>⭠</button>
-                        <Image src={urlFor(imagesToShow).url()} width={1000} height={1000} className='w-1/2' />
+                        <Image src={urlFor(imagesToShow).url()} width={1000} height={1000} className='w-3/4' />
                         <button onClick={showNext} className='text-2xl mx-4'>⭢</button>
                     </div>
                 : ''}
