@@ -38,17 +38,20 @@ export default function Page({ data }) {
                         <h1 className='text-3xl font-bold'>{productData.title}</h1>
                         <p className="font-sans font-light">Type: {productData.type}</p>
                         <p className="text-2xl font-bold">${productData.price}.00</p>
-                        <div className="flex">
-                            {relatedImages.map((item, index) => (
-                                <div key={index}>
-                                    <Image
-                                        src={urlFor(item.asset._ref).url()}
-                                        width={100}
-                                        height={100}
-                                    />
-                                </div>
-                            ))}
-                        </div>
+                        {relatedImages != undefined ? (
+                            <div className="flex">
+                                {relatedImages.map((item, index) => (
+                                    <div key={index}>
+                                        <Image
+                                            src={urlFor(item.asset._ref).url()}
+                                            width={100}
+                                            height={100}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : <></>}
+                       
                     </div>
                 </section>
             </main>

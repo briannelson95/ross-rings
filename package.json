@@ -12,7 +12,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@next/font": "^13.0.0",
+    "@next/font": "^13.0.1",
     "groq": "^2.33.2",
     "next": "13.0.0",
     "next-sanity": "^1.0.1",

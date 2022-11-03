@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'black': "#000000",
+      'black': "#091109",
       "white": "#ffffff",
       'light-blue': {
         '50': '#f0f9ff',
@@ -33,6 +33,13 @@ module.exports = {
         '800': '#1b4871',
         '900': '#102336',
       },
+      "pine": "#1F2F22",
+      "hunter": "#3F573E",
+      "sage": "#92A888",
+      "slate": "#7993A0",
+    },
+    fontFamily: {
+      serif: ["Baskervville"]
     },
     extend: {},
   },
