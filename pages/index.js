@@ -24,8 +24,16 @@ export default function Home({ data }) {
                 navigation={siteSettings.navigation}
                 logo={urlFor(siteSettings.logo).url()}
             />
-            <main className="h-screen w-screen overflow-hidden p-4">
-                <div className="grid grid-cols-1 my-4 gap-4 md:grid-cols-5">
+            <main className="h-screen w-screen overflow-hidden">
+                <section className="h-[500px] bg-cover bg-center" style={{backgroundImage: `url(${urlFor(pageData.hero.image).url()})`}}>
+                    <div className="h-full w-full flex flex-col justify-center items-center text-white bg-black bg-opacity-40">
+                        <h1 className="text-4xl font-bold">{pageData.hero.tagline}</h1>
+                        <div className="border-2 border-white mt-4 p-2">
+                            {pageData.hero.cta.title}
+                        </div>
+                    </div>
+                </section>
+                {/* <div className="grid grid-cols-1 my-4 gap-4 md:grid-cols-5">
                     <div className="col-span-1 md:col-span-2">
                         <h1 className="text-2xl font-medium mb-2">{pageData.hero.tagline}</h1>
                         <Button
@@ -34,14 +42,14 @@ export default function Home({ data }) {
                         />
                     </div>
                     <div className='col-span-1 md:col-span-3 w-full h-60 rounded-xl md:h-[85vh]' style={{backgroundImage: `url(${urlFor(pageData.hero.image).url()})`, backgroundSize: 'cover'}}>
-                        {/* <Image
+                        <Image
                             src={urlFor(pageData.hero.image).url()}
                             height={100}
                             width={100}
                             className='w-100'
-                        /> */}
+                        />
                     </div>
-                </div>
+                </div> */}
             </main>
         </>
     )
