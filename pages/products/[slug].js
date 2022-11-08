@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { useState } from "react";
-import LightBox from "../../components/LightBox";
 import Navbar from "../../components/Navbar";
 import SEO from "../../components/SEO";
 import { urlFor } from "../../lib/modules";
