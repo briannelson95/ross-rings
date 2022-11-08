@@ -39,7 +39,7 @@ module.exports = {
       "slate": "#7993A0",
     },
     fontFamily: {
-      serif: ["Baskervville"]
+      serif: ["Libre Baskerville"]
     },
     extend: {},
   },

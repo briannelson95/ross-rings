@@ -5,7 +5,7 @@ const Button = ({ text, href }) => {
         <>
             <Link
                 href={href}
-                className='bg-dark-blue-800 text-white p-2 rounded-md hover:bg-dark-blue-900 ease-in-out duration-200'
+                className="border-2 border-white mt-4 p-2 hover:bg-white hover:text-black ease-in-out duration-200"
             >
                 {text}
             </Link>

@@ -11,7 +11,10 @@ export default {
         {
             name: 'url',
             title: 'URL',
-            type: 'slug'
+            type: 'reference',
+            to: [
+                {type: 'page'}
+            ]
         },
     ],
 }
