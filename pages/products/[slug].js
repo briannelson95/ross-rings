@@ -52,7 +52,7 @@ export default function Page({ data }) {
 
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => showNext(),
-        onSwipeRight: () => showPrev(),
+        onSwipedRight: () => showPrev(),
         swipeDuration: 500,
         preventScrollOnSwipe: true,
         trackMouse: true
@@ -72,12 +72,12 @@ export default function Page({ data }) {
             />
             <main className="p-4 flex justify-center">
                 {lightboxDisplay ?
-                    <div {...swipeHandlers} className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-between bg-black/75" onClick={hideLightbox}>
-                        <button onClick={showPrev} className='mx-4 text-5xl'>
+                    <div {...swipeHandlers} className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-center md:justify-between bg-black/75" onClick={hideLightbox}>
+                        <button onClick={showPrev} className='hidden md:block md:mx-4 md:text-5xl'>
                             <HiArrowCircleLeft width={20} height={20} className='text-light-blue-100' />
                         </button>
-                        <Image src={urlFor(imagesToShow).url()} width={1000} height={1000} className='w-1/2 md:w-3/4' />
-                        <button onClick={showNext} className='mx-4 text-5xl'>
+                        <Image src={urlFor(imagesToShow).url()} width={1000} height={1000} className='w-7/8 md:w-3/4' />
+                        <button onClick={showNext} className='hidden md:block md:mx-4 md:text-5xl'>
                             <HiArrowCircleRight width={20} height={20} className='text-light-blue-100' />
                         </button>
                     </div>
