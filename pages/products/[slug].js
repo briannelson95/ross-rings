@@ -6,6 +6,7 @@ import { urlFor } from "../../lib/modules";
 import { product } from "../../lib/queries";
 import { client } from "../../lib/sanity";
 import { HiArrowCircleRight, HiArrowCircleLeft } from "react-icons/hi";
+import { useSwipeable } from 'react-swipeable';
 
 export default function Page({ data }) {
     const productData = data.productData;
@@ -26,7 +27,7 @@ export default function Page({ data }) {
     }
 
     const showNext = (e) => {
-        e.stopPropagation()
+        // e.stopPropagation()
         let currentIndex = relatedImages.indexOf(imagesToShow)
         if(currentIndex >= relatedImages.length - 1) {
             setLighboxDisplay(false)
@@ -38,7 +39,7 @@ export default function Page({ data }) {
     }
 
     const showPrev = (e) => {
-        e.stopPropagation()
+        // e.stopPropagation()
         let currentIndex = relatedImages.indexOf(imagesToShow)
           if(currentIndex <= 0) {
           setLighboxDisplay(false)
@@ -48,6 +49,15 @@ export default function Page({ data }) {
           setImagestoShow(nextImage)
         }
     }
+
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: () => showNext(),
+        onSwipeRight: () => showPrev(),
+        swipeDuration: 500,
+        preventScrollOnSwipe: true,
+        trackMouse: true
+
+    })
 
     return (
         <>
@@ -62,11 +72,11 @@ export default function Page({ data }) {
             />
             <main className="p-4 flex justify-center">
                 {lightboxDisplay ?
-                    <div className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-between bg-black/75" onClick={hideLightbox}>
+                    <div {...swipeHandlers} className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-between bg-black/75" onClick={hideLightbox}>
                         <button onClick={showPrev} className='mx-4 text-5xl'>
                             <HiArrowCircleLeft width={20} height={20} className='text-light-blue-100' />
                         </button>
-                        <Image src={urlFor(imagesToShow).url()} width={1000} height={1000} className='w-3/4' />
+                        <Image src={urlFor(imagesToShow).url()} width={1000} height={1000} className='w-1/2 md:w-3/4' />
                         <button onClick={showNext} className='mx-4 text-5xl'>
                             <HiArrowCircleRight width={20} height={20} className='text-light-blue-100' />
                         </button>
