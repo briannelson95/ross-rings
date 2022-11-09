@@ -24,7 +24,7 @@ export default function Home({ data }) {
                 navigation={siteSettings.navigation}
                 logo={urlFor(siteSettings.logo).url()}
             />
-            <main className="h-screen w-screen overflow-hidden">
+            <main className="w-screen overflow-hidden">
                 <section className="h-[500px] bg-cover bg-center md:h-[750px] md:bg-center" style={{backgroundImage: `url(${urlFor(pageData.hero.image).url()})`}}>
                     <div className="h-full w-full flex flex-col justify-center items-center text-white bg-black bg-opacity-40">
                         <h1 className="text-4xl">{pageData.hero.tagline}</h1>
