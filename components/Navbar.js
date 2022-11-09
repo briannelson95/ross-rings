@@ -18,28 +18,6 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
     return (
         <nav className="bg-white text-black w-screen h-16 shadow-md shadow-light-blue-100/50 overflow-hidden">
             {/* mobile menu */}
-            {/* {menuOpen ? 
-                <>
-                    <div className='menu1 bg-slate text-dark-blue-900 w-3/4 h-screen absolute top-0 left-0 flex flex-col items-center translate-x-0 transition-all ease-in duration-300'>
-                        <Image 
-                            src={logo}
-                            height={150}
-                            width={150}
-                        />
-                        <HiX className='absolute top-4 right-3 text-2xl' onClick={() => setMenuOpen(false)} />
-                        {navigation.map((item, index) => (
-                            <Link 
-                                key={index} 
-                                href={`/${item.slug.current}`}
-                                className='flex items-center my-4 text-3xl hover:text-white ease-in-out duration-200'
-                            >
-                                {item.title}
-                            </Link>
-                        ))}
-                    </div>
-                </>
-                : ''
-            } */}
             <div {...swipeHandlers} className={`bg-slate text-dark-blue-900 w-3/4 h-screen absolute top-0 left-0 flex flex-col items-center duration-300 ease-in-out transition-all ${menuOpen ? `translate-x-0` : `-translate-x-full`}`}>
                 <Image 
                     src={logo}
