@@ -31,27 +31,6 @@ export default function Products({ data }) {
         <div className='flex justify-center'>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-3 w-full md:w-3/4'>
             {products.map((item, index) => (
-              // <Link 
-              //   href={`products/${item.slug.current}`}
-              //   className=''
-              //   key={index}
-              // >
-              //   <div  
-              //     className='border border-dark-blue-200 rounded-lg hover:border-dark-blue-400 ease-in-out duration-200 md:col-span-1'
-              //   >
-              //     <div className='bg-cover rounded-md h-60' style={{backgroundImage: `url(${urlFor(item.image).url()})`}} />
-              //     <div className='px-2 mb-2 flex justify-between items-end'>
-              //       <div>
-              //         <p className='font-sans font-light'>{item.type}</p>
-              //         <h3 className='text-xl font-semibold'>{item.title}</h3>
-              //         <p className='text-lg'>${item.price}.00</p>
-              //       </div>
-              //       <div>
-              //         Test Button
-              //       </div>
-              //     </div> 
-              //   </div>
-              // </Link>
               <Product
                 key={index}
                 href={item.slug.current}

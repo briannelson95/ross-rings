@@ -5,7 +5,7 @@ import SEO from "../../components/SEO";
 import { urlFor } from "../../lib/modules";
 import { product } from "../../lib/queries";
 import { client } from "../../lib/sanity";
-import { HiArrowCircleRight, HiArrowCircleLeft } from "react-icons/hi";
+import { HiArrowCircleRight, HiArrowCircleLeft, HiX } from "react-icons/hi";
 import { useSwipeable } from 'react-swipeable';
 
 export default function Page({ data }) {
@@ -72,7 +72,8 @@ export default function Page({ data }) {
             />
             <main className="p-4 flex justify-center">
                 {lightboxDisplay ?
-                    <div {...swipeHandlers} className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-center md:justify-between bg-black/75" onClick={hideLightbox}>
+                    <div {...swipeHandlers} className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-center md:justify-between bg-black/75" >
+                        <div className="absolute top-5 right-4 text-white text-3xl" onClick={hideLightbox}><HiX height={40} width={40} /></div>
                         <button onClick={showPrev} className='hidden md:block md:mx-4 md:text-5xl'>
                             <HiArrowCircleLeft width={20} height={20} className='text-light-blue-100' />
                         </button>
