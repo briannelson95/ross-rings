@@ -41,6 +41,10 @@ module.exports = {
     fontFamily: {
       serif: ["Libre Baskerville"]
     },
+    transitionProperty: {
+      'width': 'width',
+      'height': 'height'
+    },
     extend: {},
   },
   plugins: [],
