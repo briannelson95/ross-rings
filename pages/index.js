@@ -6,13 +6,15 @@ import { urlFor } from '../lib/modules'
 import Navbar from '../components/Navbar';
 import Button from '../components/Button';
 import Link from 'next/link';
+import TextComponent from '../components/TextComponent';
+import SmallGridProducts from '../components/SmallGridProducts';
 
 export default function Home({ data }) {
-    console.log(data.pageData[0].hero)
+    console.log(data)
     const pageData = data.pageData[0];
     const mobile = data.siteSettings.mobileMenu;
     const siteSettings = data.siteSettings;
-    
+    const products = data.products   
     return (
         <>
             <SEO 
@@ -34,9 +36,19 @@ export default function Home({ data }) {
                         />
                     </div>
                 </section>
-                <section className="m-2">
-                    <h2 className="text-2xl">Labore do elit adipisicing cillum aliquip elit sunt est amet amet ea qui.</h2>
-                    <p>Lorem ea voluptate deserunt sint. Fugiat Lorem officia laboris proident non Lorem mollit exercitation duis deserunt et. Labore nostrud excepteur aute culpa voluptate adipisicing nostrud do Lorem sit in.</p>
+                <section className="m-2 p-4">
+                    <TextComponent 
+                        text={pageData.content}
+                    />
+                    <div className="grid grid-cols-2 gap-3 md:grid-cols-4 my-2">
+                        {products.map((item, index) => (
+                            <SmallGridProducts
+                                key={index}
+                                href={item.slug.current}
+                                image={item.image}
+                            />
+                        ))}
+                    </div>
                 </section>
                 {/* <div className="grid grid-cols-1 my-4 gap-4 md:grid-cols-5">
                     <div className="col-span-1 md:col-span-2">

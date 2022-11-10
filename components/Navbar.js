@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { urlFor } from '../lib/modules'
-import { HiMenu, HiX } from 'react-icons/hi'
+import { HiMenu, HiX, HiOutlineShoppingCart } from 'react-icons/hi'
 import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
@@ -19,11 +19,15 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
         <nav className="bg-white text-black w-screen h-16 shadow-md shadow-light-blue-100/50 overflow-hidden">
             {/* mobile menu */}
             <div {...swipeHandlers} className={`bg-light-blue-100 text-dark-blue-900 w-3/4 h-screen absolute top-0 left-0 flex flex-col items-center duration-300 ease-in-out transition-all ${menuOpen ? `translate-x-0` : `-translate-x-full`}`}>
-                <Image 
-                    src={logo}
-                    height={150}
-                    width={150}
-                />
+                <Link
+                    href='/'
+                >
+                    <Image 
+                        src={logo}
+                        height={150}
+                        width={150}
+                    />
+                </Link>
                 <HiX className='absolute top-4 right-3 text-2xl' onClick={() => setMenuOpen(false)} />
                 {navigation.map((item, index) => (
                     <Link 
@@ -45,7 +49,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
                     />
                 </Link>
                 <Link href={`/${navigation[1].slug.current}`}>
-                    {navigation[1].title}
+                    <HiOutlineShoppingCart height={40} width={40}  className='text-2xl ml-2' />
                 </Link>
             </div>
             {/* desktop nav */}
