@@ -8,7 +8,7 @@ const SmallGridProducts = ({ href, image }) => {
                 <Link
                     href={`products/${href}`}
                 >
-                    <div className='bg-cover rounded-md h-32 w-32' style={{backgroundImage: `url(${urlFor(image).url()})`}} />
+                    <div className='bg-cover rounded-md h-32 w-32 md:h-60 md:w-60' style={{backgroundImage: `url(${urlFor(image).url()})`}} />
                 </Link>
             </div>
         </>

@@ -10,7 +10,7 @@ import TextComponent from '../components/TextComponent';
 import SmallGridProducts from '../components/SmallGridProducts';
 
 export default function Home({ data }) {
-    console.log(data)
+    // console.log(data)
     const pageData = data.pageData[0];
     const mobile = data.siteSettings.mobileMenu;
     const siteSettings = data.siteSettings;

@@ -34,6 +34,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
                         key={index} 
                         href={`/${item.slug.current}`}
                         className='flex items-center my-4 text-3xl hover:text-white ease-in-out duration-200'
+                        onClick={() => setMenuOpen(false)}
                     >
                         {item.title}
                     </Link>
