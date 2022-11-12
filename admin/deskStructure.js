@@ -6,7 +6,8 @@ const hiddenDocTypes = listItem =>
     ![
         "siteSettings", 
         "page", 
-        "products" 
+        "products",
+        "home"
     ].includes(
         listItem.getId()
     );
@@ -30,8 +31,8 @@ export default () =>
                 .icon(HiOutlineHome)
                 .child(
                     S.editor()
-                        .schemaType("page")
-                        .documentId("26346fcb-2f48-4c19-852c-114eba7b2a29")
+                        .schemaType("home")
+                        .documentId("homepage")
                 ),
             S.divider(),
             // add visial divider (optional)

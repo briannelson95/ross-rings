@@ -11,7 +11,7 @@ import { useSwipeable } from 'react-swipeable';
 export default function Page({ data }) {
     const productData = data.productData;
     const relatedImages = productData.gallery;
-    const mobile = data.siteSettings.mobileMenu;
+    const mobile = data.siteSettings.favicon;
     const siteSettings = data.siteSettings;
 
     const [lightboxDisplay, setLighboxDisplay] = useState(false);

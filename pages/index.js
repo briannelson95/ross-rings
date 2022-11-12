@@ -10,11 +10,14 @@ import TextComponent from '../components/TextComponent';
 import SmallGridProducts from '../components/SmallGridProducts';
 
 export default function Home({ data }) {
-    // console.log(data)
     const pageData = data.pageData[0];
-    const mobile = data.siteSettings.mobileMenu;
+    const mobile = data.siteSettings.favicon;
     const siteSettings = data.siteSettings;
-    const products = data.products   
+    const products = pageData.featuredProducts  
+
+
+
+    console.log(mobile)
     return (
         <>
             <SEO 
@@ -27,7 +30,7 @@ export default function Home({ data }) {
                 logo={urlFor(siteSettings.logo).url()}
             />
             <main className="w-screen overflow-hidden">
-                <section className="h-[500px] bg-cover bg-center md:h-[750px] md:bg-center" style={{backgroundImage: `url(${urlFor(pageData.hero.image).url()})`}}>
+                <section className="h-[500px] bg-cover bg-center md:h-[750px] md:bg-center text-center" style={{backgroundImage: `url(${urlFor(pageData.hero.image).url()})`}}>
                     <div className="h-full w-full flex flex-col justify-center items-center text-white bg-black bg-opacity-40">
                         <h1 className="text-4xl">{pageData.hero.tagline}</h1>
                         <Button 

@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar';
 export default function Page({ data }) {
     // console.log(data);
     const pageData = data.pageData;
-    const mobile = data.siteSettings.mobileMenu;
+    const mobile = data.siteSettings.favicon;
     const siteSettings = data.siteSettings;
     return (
         <>

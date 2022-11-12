@@ -24,6 +24,12 @@ export default {
             type: 'image'
         },
         {
+            name: 'favicon',
+            title: 'Favicon',
+            type: 'image',
+            description: 'This is used for the tab favicon as well as the mobile menu'
+        },
+        {
             name: 'navigation',
             title: 'Navigation Menu',
             type: 'array',
@@ -33,25 +39,6 @@ export default {
                     to: [
                         {type: 'page'}
                     ]
-                }
-            ]
-        },
-        {
-            name: 'mobileMenu',
-            title: 'Mobile Menu',
-            type: 'array',
-            of: [
-                {
-                    title: 'Pages',
-                    type: 'reference',
-                    to: [
-                        {type: 'page'}
-                    ]
-                },
-                {
-                    name: 'logo',
-                    title: 'Logo',
-                    type: 'mainImage'
                 }
             ]
         },

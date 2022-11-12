@@ -9,7 +9,7 @@ import Button from '../components/Button';
 import Link from 'next/link';
 
 export default function Contact({ data }) {
-  const mobile = data.siteSettings.mobileMenu;
+  const mobile = data.siteSettings.favicon;
   const siteSettings = data.siteSettings;
   return (
     <>

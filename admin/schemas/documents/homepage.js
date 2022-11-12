@@ -1,9 +1,9 @@
 export default {
-    name: 'page',
-    title: 'Pages',
+    name: 'home',
+    title: 'Homepage',
     type: 'document',
     __experimental_actions:[
-        "create", "delete", "update", "publish"
+        /*"create", /*"delete",*/ "update", "publish"
     ],
     fields: [
         {
@@ -17,19 +17,11 @@ export default {
             title: 'Slug',
             type: 'slug',
             validation: Rule => Rule.required(),
-            options: {
-                source: "title",
-                maxLength: 96
-            }
+            readOnly: ({document}) => document?.title
         },
         {
             name: 'hero',
             type: 'hero'
-        },
-        {
-            name: 'image',
-            title: 'Featured Image',
-            type: 'mainImage'
         },
         {
             name: 'content',
@@ -37,10 +29,10 @@ export default {
             type: 'blockContent'
         },
         {
-            name: 'seo',
-            title: 'SEO',
-            type: 'openGraph',
-            description: 'Use this to set custom SEO meta-data for each page. Heads up! This will override site settings.'
+            name: 'featuredProducts',
+            title: 'Featured Products',
+            type: 'featuredProduct',
+            description: 'Only the first 4 items will show'
         }
     ],
 }

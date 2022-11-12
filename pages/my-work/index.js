@@ -11,7 +11,7 @@ import Product from '../../components/Product';
 
 export default function Products({ data }) {
   const pageData = data.pageData[0];
-  const mobile = data.siteSettings.mobileMenu;
+  const mobile = data.siteSettings.favicon;
   const siteSettings = data.siteSettings;
   const products = data.products;
   console.log(products)

@@ -44,7 +44,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
                 <HiMenu height={40} width={40} className='text-2xl ml-2' onClick={() => setMenuOpen(true)} />
                 <Link href="/">
                     <Image 
-                        src={urlFor(mobileMenu[1]).url()} 
+                        src={urlFor(mobileMenu).url()} 
                         width={50}
                         height={50}
                     />

@@ -56,4 +56,10 @@ export default {
             type: 'gallery'
         }
     ],
+    preview: {
+        select: {
+          title: 'title',
+          media: 'image'
+        }
+    }
 }
