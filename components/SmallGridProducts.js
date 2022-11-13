@@ -1,14 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "../lib/modules";
 
-const SmallGridProducts = ({ href, image }) => {
+const SmallGridProducts = ({ href, image, alt }) => {
     return (
         <>
-            <div className="flex justify-center">
+            <div className="">
                 <Link
                     href={`products/${href}`}
                 >
-                    <div className='bg-cover rounded-md h-32 w-32 md:h-60 md:w-60' style={{backgroundImage: `url(${urlFor(image).url()})`}} />
+                    {/* <Image
+                        src={urlFor(image).url()}
+                        height={200}
+                        width={200}
+                        className='w-fit h-fit'
+                        // alt={alt}
+                    /> */}
+                    <div className='bg-cover rounded-md w-36 h-36 xl:w-72 xl:h-72' style={{backgroundImage: `url(${urlFor(image).url()})`}} />
                 </Link>
             </div>
         </>

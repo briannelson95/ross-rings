@@ -40,7 +40,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
                     </Link>
                 ))}
             </div>
-            <div className="h-full flex justify-between items-center mx-4 md:hidden">
+            <div className="h-full flex justify-between items-center mx-4 lg:hidden">
                 <HiMenu height={40} width={40} className='text-2xl ml-2' onClick={() => setMenuOpen(true)} />
                 <Link href="/">
                     <Image 
@@ -54,7 +54,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
                 </Link>
             </div>
             {/* desktop nav */}
-            <div className='hidden md:flex h-full mx-8'>
+            <div className='hidden lg:flex h-full mx-8'>
                     <Link href="/" className='first:mr-auto'>
                         <Image 
                             src={logo}

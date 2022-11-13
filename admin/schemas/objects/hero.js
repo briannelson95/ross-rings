@@ -10,8 +10,8 @@ export default {
         },
         {
             name: 'mainContent',
-            title: 'Main Content',
-            type: 'simpleBlockContent'
+            title: 'Subtitle',
+            type: 'string'
         },
         {
             name: 'image',

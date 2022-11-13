@@ -39,11 +39,19 @@ module.exports = {
       "slate": "#7993A0",
     },
     fontFamily: {
-      serif: ["Libre Baskerville"]
+      'serif': ["Libre Baskerville"],
+      'sans': ['ui-sans-serif']
     },
     transitionProperty: {
       'width': 'width',
       'height': 'height'
+    },
+    backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+      '250%': '250%',
+      '16': '4rem',
     },
     extend: {},
   },
