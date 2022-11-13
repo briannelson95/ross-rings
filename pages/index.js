@@ -4,6 +4,7 @@ import SEO from '../components/SEO'
 import Image from "next/image";
 import { urlFor } from '../lib/modules'
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer'
 import Button from '../components/Button';
 import Link from 'next/link';
 import TextComponent from '../components/TextComponent';
@@ -55,23 +56,9 @@ export default function Home({ data }) {
                         ))}
                     </div>
                 </section>
-                {/* <div className="grid grid-cols-1 my-4 gap-4 xl:grid-cols-5">
-                    <div className="col-span-1 xl:col-span-2">
-                        <h1 className="text-2xl font-medium mb-2">{pageData.hero.tagline}</h1>
-                        <Button
-                            text={pageData.hero.cta.title}
-                            href={pageData.hero.cta.url.current}
-                        />
-                    </div>
-                    <div className='col-span-1 xl:col-span-3 w-full h-60 rounded-xl xl:h-[85vh]' style={{backgroundImage: `url(${urlFor(pageData.hero.image).url()})`, backgroundSize: 'cover'}}>
-                        <Image
-                            src={urlFor(pageData.hero.image).url()}
-                            height={100}
-                            width={100}
-                            className='w-100'
-                        />
-                    </div>
-                </div> */}
+                <Footer
+                    navigation={siteSettings.navigation}
+                />
             </main>
         </>
     )
