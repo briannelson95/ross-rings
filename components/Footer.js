@@ -19,7 +19,7 @@ const Footer = ({ navigation }) => {
                     </div>
                 </div>
                 <div className="text-center">
-                    Website Developed by <a className="underline" href="https://www.briannelson.dev/" target="_blank">Brian Nelson</a>
+                    Website Developed by <a className="underline" href="https://www.briannelson.dev/" target="_blank" rel="noreferrer">Brian Nelson</a>
                 </div>
             </footer>
         </>
