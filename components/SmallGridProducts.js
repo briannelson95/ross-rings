@@ -7,7 +7,7 @@ const SmallGridProducts = ({ href, image, alt }) => {
         <>
             <div className="">
                 <Link
-                    href={`products/${href}`}
+                    href={`my-work/${href}`}
                 >
                     {/* <Image
                         src={urlFor(image).url()}

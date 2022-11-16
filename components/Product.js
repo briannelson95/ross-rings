@@ -12,7 +12,12 @@ const Product = ({ href, name, price, type, image }) => {
               <div  
                 className='border border-dark-blue-200 rounded-lg hover:border-dark-blue-400 ease-in-out duration-200 md:col-span-1'
               >
-                <div className='bg-cover rounded-md h-60' style={{backgroundImage: `url(${urlFor(image).url()})`}} />
+                <div 
+                  className='bg-cover rounded-md h-60 bg-light-blue-100' 
+                  style={image 
+                    ? {backgroundImage: `url(${urlFor(image).url()})`} 
+                    : {backgroundImage: 'url(/RossRings-Icon.PNG)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}} 
+                  />
                 <div className='px-2 mb-2 flex justify-between items-end'>
                   <div>
                     <p className='font-sans font-light'>{type}</p>

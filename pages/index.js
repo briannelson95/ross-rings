@@ -41,7 +41,7 @@ export default function Home({ data }) {
                         />
                     </div>
                 </section>
-                <section className="my-2 px-10">
+                <section className="my-2 px-10 2xl:mx-52">
                     <TextComponent 
                         text={pageData.content}
                     />

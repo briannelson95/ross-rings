@@ -8,13 +8,15 @@ import Navbar from '../../components/Navbar';
 import Button from '../../components/Button';
 import Link from 'next/link';
 import Product from '../../components/Product';
+import TextComponent from '../../components/TextComponent'
 
 export default function Products({ data }) {
   const pageData = data.pageData[0];
   const mobile = data.siteSettings.favicon;
   const siteSettings = data.siteSettings;
   const products = data.products;
-  console.log(products)
+  const hero = data.favorite[0];
+  console.log(hero)
 
   return (
     <>
@@ -27,9 +29,30 @@ export default function Products({ data }) {
         navigation={siteSettings.navigation}
         logo={urlFor(siteSettings.logo).url()}
       />
-      <main className='p-4'>
+      <main className='px-10 py-4 2xl:mx-52'>
+        <section className='grid grid-cols-1 gap-4 xl:grid-cols-5 mb-4'>
+          <div className="xl:col-span-2 xl:flex xl:justify-center">
+            <Image 
+              src={urlFor(hero.favorite.image).url()}
+              width={500}
+              height={500}
+              alt={hero.favorite.image.alt}
+              className='xl:w-full'
+            />
+          </div>
+          <div className='xl:col-span-3'>
+            <TextComponent
+              text={hero.description}
+            />
+            <div className='my-2'>
+              <Link className='bg-pine text-white px-4 py-2' href={`/my-work/${hero.favorite.slug.current}`}>
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </section>
         <div className='flex justify-center'>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-3 w-full md:w-3/4'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-3 w-full'>
             {products.map((item, index) => (
               <Product
                 key={index}

@@ -54,7 +54,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
                 </Link>
             </div>
             {/* desktop nav */}
-            <div className='hidden lg:flex h-full mx-8'>
+            <div className='hidden lg:flex h-full mx-8 xl:px-10 2xl:mx-52'>
                     <Link href="/" className='first:mr-auto'>
                         <Image 
                             src={logo}
@@ -66,7 +66,7 @@ const Navbar = ({ navigation, mobileMenu, logo }) => {
                         <Link 
                             key={index} 
                             href={`/${item.slug.current}`}
-                            className='flex items-center mx-6'
+                            className='flex items-center mx-6 hover:underline ease-in-out'
                         >
                             {item.title}
                         </Link>
