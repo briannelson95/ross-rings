@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = ({ navigation }) => {
     return (
         <>
-            <footer className="bg-light-blue-50 mt-6 px-10 py-4 pb-6">
+            <footer className="bg-light-blue-50 mt-6 px-10 py-4 pb-6 2xl:mx-52">
                 <div className="grid grid-cols-1 gap-3 xl:grid-cols-4">
                     <div>
                         <ul>

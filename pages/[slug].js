@@ -21,7 +21,7 @@ export default function Page({ data }) {
                 navigation={siteSettings.navigation}
                 logo={urlFor(siteSettings.logo).url()}
             />
-            <main>
+            <main className='py-4 px-10 2xl:mx-52'>
                 <h1 className='text-2xl font-medium'>{pageData.title}</h1>
             </main>
         </>
