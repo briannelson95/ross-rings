@@ -16,9 +16,6 @@ export default function Home({ data }) {
     const siteSettings = data.siteSettings;
     const products = pageData.featuredProducts  
 
-
-
-    console.log(mobile)
     return (
         <>
             <SEO 
@@ -45,13 +42,20 @@ export default function Home({ data }) {
                     <TextComponent 
                         text={pageData.content}
                     />
-                    <div className="mt-3 grid grid-cols-2 gap-2 xl:grid-cols-4 xl:gap-4">
+                    <div 
+                        className={
+                            `mt-3 grid grid-cols-2 gap-2 xl:gap-4
+                            ${products.length <= 3 
+                                ? 'xl:flex xl:justify-center xl:grid-cols-3' 
+                                : 'xl:grid-cols-4'
+                            }`
+                        }
+                    >
                         {products.map((item, index) => (
                             <SmallGridProducts
                                 key={index}
                                 href={item.slug.current}
                                 image={item.image}
-                                // alt={item.image.alt}
                             />
                         ))}
                     </div>

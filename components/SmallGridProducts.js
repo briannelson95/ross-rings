@@ -9,14 +9,7 @@ const SmallGridProducts = ({ href, image, alt }) => {
                 <Link
                     href={`my-work/${href}`}
                 >
-                    {/* <Image
-                        src={urlFor(image).url()}
-                        height={200}
-                        width={200}
-                        className='w-fit h-fit'
-                        // alt={alt}
-                    /> */}
-                    <div className='bg-cover rounded-md w-36 h-36 xl:w-72 xl:h-72' style={{backgroundImage: `url(${urlFor(image).url()})`}} />
+                    <div className='bg-cover rounded-md w-[151px] h-[151px] xl:w-72 xl:h-72' style={{backgroundImage: `url(${urlFor(image).url()})`}} />
                 </Link>
             </div>
         </>
