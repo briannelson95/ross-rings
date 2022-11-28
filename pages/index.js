@@ -9,13 +9,18 @@ import Button from '../components/Button';
 import Link from 'next/link';
 import TextComponent from '../components/TextComponent';
 import SmallGridProducts from '../components/SmallGridProducts';
+import Grid from "../components/Grid";
+
+import InstagramFeed  from 'react-ig-feed'
+import InstagramGrid from "../components/InstagramGrid";
+import HeroBanner from "../components/HeroBanner";
 
 export default function Home({ data }) {
     const pageData = data.pageData[0];
     const mobile = data.siteSettings.favicon;
     const siteSettings = data.siteSettings;
-    const products = pageData.featuredProducts  
-
+    const products = pageData.featuredProducts
+    console.log(products)
     return (
         <>
             <SEO 
@@ -60,6 +65,16 @@ export default function Home({ data }) {
                         ))}
                     </div>
                 </section>
+                <section className="my-2 px-10 2xl:mx-52">
+                    <Grid
+                        items={products}
+                    />
+                </section>
+                <HeroBanner 
+                    image={pageData.hero.image} 
+                    filter={true}
+                    title="Hello World"
+                />
                 <Footer
                     navigation={siteSettings.navigation}
                 />
