@@ -11,8 +11,6 @@ import TextComponent from '../components/TextComponent';
 import SmallGridProducts from '../components/SmallGridProducts';
 import Grid from "../components/Grid";
 
-import InstagramFeed  from 'react-ig-feed'
-import InstagramGrid from "../components/InstagramGrid";
 import HeroBanner from "../components/HeroBanner";
 
 export default function Home({ data }) {
