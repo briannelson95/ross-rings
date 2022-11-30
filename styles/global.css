@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+@font-face {
+    font-family: 'myanmar';
+    src: url('/fonts/myanmar-mn-webfont.woff2') format('woff2'),
+         url('/fonts/myanmar-mn-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

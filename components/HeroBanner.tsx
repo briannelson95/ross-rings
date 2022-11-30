@@ -3,7 +3,7 @@ import { urlFor } from "../lib/modules";
 
 const HeroBanner = ({ image, filter, title }) => {
     return (
-        <div className="w-full h-96 relative">
+        <div className="w-full h-96 relative border border-grey">
             <div className="absolute w-full h-full">
                 <Image
                     src={urlFor(image).url()}
@@ -13,8 +13,8 @@ const HeroBanner = ({ image, filter, title }) => {
                     className='w-full h-full object-cover'
                 />
             </div>
-            <div className={`relative h-full flex overflow-x-auto ${filter ? 'backdrop-filter backdrop-grayscale' : ''}`}>
-                <div className={`w-full ${filter ? 'bg-light-blue-900 bg-opacity-50' : ''}`}>
+            <div className={`relative h-full flex overflow-x-auto `}>
+                <div className={`w-full ${filter ? 'mix-blend-color bg-pale-sky' : ''}`}>
                     <div className="h-full flex justify-center items-center">
                         <h1 className={`w-3/4 text-6xl font-bold ${filter ? 'text-white' : ''}`}>
                             {title}

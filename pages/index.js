@@ -12,6 +12,8 @@ import SmallGridProducts from '../components/SmallGridProducts';
 import Grid from "../components/Grid";
 
 import HeroBanner from "../components/HeroBanner";
+import Hero from "../components/Hero";
+import NewNav from "../components/NewNav";
 
 export default function Home({ data }) {
     const pageData = data.pageData[0];
@@ -25,6 +27,15 @@ export default function Home({ data }) {
                 title={`${data.siteSettings.title}`} 
                 icon={urlFor(siteSettings.seo.icon).url()}  
             />
+            <section className="h-screen w-screen relative">
+                <Hero />
+                <div className="pt-8" />
+                <NewNav
+                    navigation={siteSettings.navigation}
+                    logo={urlFor(siteSettings.logo).url()}
+                    
+                />
+            </section>
             <Navbar
                 mobileMenu={mobile}
                 navigation={siteSettings.navigation}
