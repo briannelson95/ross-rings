@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
 import { urlFor } from "../lib/modules";
 
 const Hero = ({ images }) => {
     return (
         <div className="w-full h-full bg-heather absolute">
-            {images > 0 
+            {/* {images > 0 
                 ? <Carousel axis="vertical" autoPlay>
                         {images.map((item, index) => (
                             <div key={index}>
@@ -26,7 +26,7 @@ const Hero = ({ images }) => {
                         width={2000}
                     />
                 </div>
-            }
+            } */}
             
         </div>
     )
