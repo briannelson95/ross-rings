@@ -103,7 +103,8 @@ module.exports = {
         '800': '#09141E',  
         '900': '#070F17'
       },
-      'grey': '#707070'
+      'grey': '#707070',
+      'offwhite': "#F2F2F2"
     },
     fontFamily: {
       'serif': ["Libre Baskerville"],
@@ -116,6 +117,9 @@ module.exports = {
       base: ['18px', '24px'],
       lg: ['20px', '28px'],
       xl: ['24px', '32px'],
+      "2xl": ['36px'],
+      "3xl": ['46px'],
+      "6xl": ['60px']
     },
     transitionProperty: {
       'width': 'width',

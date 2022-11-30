@@ -3,7 +3,7 @@ import {PortableText} from '@portabletext/react'
 const components = {
     block: {
         h1: ({children}) => <h1 className='text-3xl font-bold'>{children}</h1>,
-        h2: ({children}) => <h2 className='text-2xl'>{children}</h2>,
+        h2: ({children}) => <h2 className='text-6xl leading-10'>{children}</h2>,
         h3: ({children}) => <h3 className='text-xl'>{children}</h3>,
         h4: ({children}) => <h4 className='text-lg'>{children}</h4>,
     },
@@ -24,7 +24,7 @@ const components = {
             </a>
           )
         },
-      },
+    },
 }
 
 const TextComponent = ({ text }) => {

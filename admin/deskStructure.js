@@ -48,11 +48,7 @@ export default () =>
             // add visial divider (optional)
             S.documentTypeListItem("page").title("Pages").icon(HiOutlineDocumentAdd),
             S.documentTypeListItem("products").title("Products").icon(HiOutlineShoppingCart),
-            // S.documentListItem()
-            //     .id("d7bedd28-a64b-4253-b3a6-8720f632ff87")
-            //     .title("Portfolio")
-            //     .schemaType("portfolio")
-            //     .icon(HiOutlinePlay),
+            S.divider(),
             
             ...S.documentTypeListItems().filter(hiddenDocTypes)
         ])

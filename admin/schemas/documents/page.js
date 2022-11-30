@@ -23,9 +23,21 @@ export default {
             }
         },
         {
+            name: 'featuredTitle',
+            title: 'Featured Title',
+            type: 'string'
+        },
+        {
             name: 'content',
             title: 'Main Content',
             type: 'blockContent'
+        },
+        {
+            name: 'filter',
+            title: 'Filter',
+            type: 'boolean',
+            default: true,
+            description: 'Use this to remove the black/white filter from the hero image.'
         },
         {
             name: 'image',
