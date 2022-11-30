@@ -7,7 +7,7 @@ const Testimonials = ({ testimonials }) => {
             <div className="flex">
                 {testimonials.map((item, index) => (
                     <div key={index} className="flex flex-col items-center spacespace-between mt-32 p-8 w-80">
-                        <p className="text-[162px]">"</p>
+                        <p className="text-[162px]">&quot;</p>
                         <TextComponent text={item.testimonial} />
                     </div>
                 ))}
