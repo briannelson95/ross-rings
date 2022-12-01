@@ -1,4 +1,6 @@
 import {PortableText} from '@portabletext/react'
+import Image from 'next/image'
+import { urlFor } from '../lib/modules'
 
 const components = {
     block: {
@@ -10,6 +12,9 @@ const components = {
     list: {
         bullet: ({children}) => <ul className="mt-xl">{children}</ul>,
         number: ({children}) => <ol className="mt-lg">{children}</ol>,
+    },
+    types: {
+      mainImage: ({value}) => <Image src={urlFor(value).url()} height={500} width={500} alt={value.alt ? value.alt : ''} loading='lazy' className='h-full w-full' />,
     },
     marks: {
         // Ex. 1: custom renderer for the em / italics decorator
