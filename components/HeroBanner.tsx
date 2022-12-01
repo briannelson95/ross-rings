@@ -17,9 +17,9 @@ const HeroBanner = ({ image, filter, title, children }) => {
                 <div className={`w-full ${filter ? 'mix-blend-color bg-pale-sky' : ''}`}>
                     <div className="h-full flex justify-center items-center" />
                 </div>
-                <div className="absolute h-full flex items-center">
+                <div className="lg:ml-44 2xl:ml-64 absolute h-full flex items-center">
                     {title 
-                        ?  <h1 className={`lg:ml-44 2xl:ml-64 lg:text-[112px] 2xl:text-[133px] ${filter ? 'text-white' : ''}`}>{title}</h1>
+                        ?  <h1 className={`lg:text-[112px] 2xl:text-[133px] ${filter ? 'text-white' : ''}`}>{title}</h1>
                         : children}
                 </div>
             </div>
