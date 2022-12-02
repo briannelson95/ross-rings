@@ -20,7 +20,7 @@ export default function Products({ data }) {
   const products = data.products;
   const hero = data.favorite[0];
   let seo = data.pageData.seo;
-  console.log(seo);
+  console.log(pageData);
 
   return (
     <>
