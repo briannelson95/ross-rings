@@ -19,8 +19,8 @@ export default function Products({ data }) {
   const siteSettings = data.siteSettings;
   const products = data.products;
   const hero = data.favorite[0];
-  let seo = data.pageData.seo;
-  console.log(pageData);
+  let seo = pageData.seo;
+  console.log(seo);
 
   return (
     <>
