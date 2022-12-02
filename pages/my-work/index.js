@@ -25,7 +25,7 @@ export default function Products({ data }) {
   return (
     <>
       <SEO 
-        title={seo.title ? seo.title : `${pageData.title} - ${data.siteSettings.title}`} 
+        title={`${pageData.title} - ${data.siteSettings.title}`} 
         icon={urlFor(siteSettings.seo.icon).url()}  
       />
       <main className=''>
