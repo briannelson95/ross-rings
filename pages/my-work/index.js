@@ -20,6 +20,7 @@ export default function Products({ data }) {
   const products = data.products;
   const hero = data.favorite[0];
   let seo = data.siteSettings.seo;
+  console.log(seo);
 
   return (
     <>
