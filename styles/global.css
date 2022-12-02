@@ -12,6 +12,10 @@
 
 }
 
+html {
+    @apply bg-offwhite;
+}
+
 .productRow:nth-of-type(even) {
     direction: rtl;
 }
