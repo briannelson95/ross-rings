@@ -20,12 +20,11 @@ export default function Products({ data }) {
   const products = data.products;
   const hero = data.favorite[0];
   let seo = pageData.seo;
-  console.log(seo);
 
   return (
     <>
       <SEO 
-        title={`${pageData.title} - ${data.siteSettings.title}`} 
+        title={seo.title ? seo.title : `${pageData.title} - ${data.siteSettings.title}`} 
         icon={urlFor(siteSettings.seo.icon).url()}  
       />
       <main className=''>
