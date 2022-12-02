@@ -68,10 +68,11 @@ export default function Home({ data }) {
                     />
                 </section>
         
-                <Footer
-                    navigation={siteSettings.navigation}
-                />
+                
             </main>
+            <Footer
+                navigation={siteSettings.navigation}
+            />
         </>
     )
 }

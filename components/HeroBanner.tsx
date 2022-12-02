@@ -5,13 +5,16 @@ const HeroBanner = ({ image, filter, title, children }) => {
     return (
         <div className={`w-full h-full relative border border-grey`}>
             <div className="absolute w-full h-full">
-                <Image
-                    src={urlFor(image).url()}
-                    alt={image.alt}
-                    height={2000}
-                    width={2000}
-                    className={`w-full h-full object-cover`}
-                />
+                {image 
+                    ? <Image
+                        src={urlFor(image).url()}
+                        alt={image.alt}
+                        height={2000}
+                        width={2000}
+                        className={`w-full h-full object-cover`}
+                    />
+                    : <div className="bg-heather-800" />
+                }
             </div>
             <div className={`relative h-full flex overflow-x-auto`}>
                 <div className={`w-full ${filter ? 'mix-blend-color bg-pale-sky' : 'bg-black bg-opacity-30'}`}>

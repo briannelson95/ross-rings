@@ -5,7 +5,7 @@ import PriceTag from './PriceTag';
 
 export default function Grid({ items }){
     return (
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:grid-rows-2">
+        <div className="productsRow grid grid-cols-1 gap-4 lg:grid-cols-4 lg:grid-rows-2">
             {items.map((item, index) => (
                 <>
                     <Link
@@ -14,25 +14,25 @@ export default function Grid({ items }){
                         href={`/my-work/${item.slug.current}`}
                     >
                         <div className="absolute w-full h-full">
-                                <Image
-                                    src={urlFor(item.image).url()}
-                                    alt={item.image.alt}
-                                    height={2000}
-                                    width={2000}
-                                    className='w-full h-full object-cover'
-                                />
-                            </div>
-                            <div className={`relative h-full flex overflow-x-auto`}>
-                                <div className={`w-full`}>
-                                    <div className="h-full w-3/4 flex items-end pb-6">
-                                        <PriceTag
-                                            price={item.price}
-                                            name={item.title}
-                                        />
-                                    </div>
+                            <Image
+                                src={urlFor(item.image).url()}
+                                alt={item.image.alt}
+                                height={2000}
+                                width={2000}
+                                className='w-full h-full object-cover'
+                            />
+                        </div>
+                        <div className={`relative h-full flex overflow-x-auto`}>
+                            <div className={`w-full`}>
+                                <div className="h-full w-3/4 flex items-end pb-6">
+                                    <PriceTag
+                                        price={item.price}
+                                        name={item.title}
+                                    />
                                 </div>
                             </div>
-                        </Link>
+                        </div>
+                    </Link>
                 </>
             ))}
         </div>

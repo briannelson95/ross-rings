@@ -11,3 +11,7 @@
     font-style: normal;
 
 }
+
+.productRow:nth-of-type(even) {
+    direction: rtl;
+}
