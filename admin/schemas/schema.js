@@ -19,6 +19,8 @@ import homepage from './documents/homepage'
 import featuredProduct from './objects/featuredProduct'
 import work from './documents/work'
 import testimonials from './documents/testimonials'
+import carousel from './objects/carousel'
+import figure from './objects/figure'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -45,5 +47,7 @@ export default createSchema({
     gallery,
     featuredProduct,
     testimonials,
+    carousel,
+    figure,
   ]),
 })

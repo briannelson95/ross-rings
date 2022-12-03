@@ -12,6 +12,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.6.0",
     "@next/font": "^13.0.1",
     "@portabletext/react": "^2.0.0",
     "groq": "^2.33.2",

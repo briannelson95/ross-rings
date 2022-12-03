@@ -11,6 +11,7 @@ export default {
             title: 'Page Title',
             type: 'string',
             validation: Rule => Rule.required(),
+            readOnly: ({document}) => document?.title
         },
         {
             name: 'slug',
@@ -20,8 +21,15 @@ export default {
             readOnly: ({document}) => document?.title
         },
         {
-            name: 'hero',
-            type: 'hero'
+            name: 'imageCarousel',
+            type: 'carousel',
+            title: 'Image Carousel'
+        },
+        {
+            name: 'cta',
+            title: 'Call to Action',
+            type: 'cta',
+            description: 'Where do you want your users to go?'
         },
         {
             name: 'content',

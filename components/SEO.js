@@ -8,6 +8,9 @@ const SEO = ({ title, icon, description, image }) => {
             <link rel="icon" href={icon} />
             <meta name="title" content={title} />
             <meta name="description" content={description} />
+            <meta name="theme-color" media="(prefers-color-scheme: light)" content="#B8C9D1" />
+            <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#B8C9D1" />
+            <meta name="theme-color" content="#B8C9D1" />
 
             <meta property="og:type" content="website" />
             <meta property="og:url" content={process.env.NEXT_PUBLIC_URL} />

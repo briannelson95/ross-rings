@@ -16,6 +16,7 @@ import Hero from "../components/Hero";
 import NewNav from "../components/NewNav";
 import TextBox from "../components/TextBox";
 import Testimonials from "../components/Testimonials";
+import Slider from "../components/Slider";
 
 export default function Home({ data }) {
     const pageData = data.pageData[0];
@@ -23,7 +24,6 @@ export default function Home({ data }) {
     const siteSettings = data.siteSettings;
     const products = pageData.featuredProducts
     const testimonials = data.testimonials;
-    // console.log(testimonials)
     return (
         <>
             <SEO 
@@ -31,13 +31,16 @@ export default function Home({ data }) {
                 icon={urlFor(siteSettings.seo.icon).url()}  
             />
             <main className="w-screen overflow-hidden">
-                <section className="h-screen w-screen relative">
+                <section className="h-screen relative overflow-hidden">
                     <Hero />
                     <div className="pt-8" />
                     <NewNav
                         navigation={siteSettings.navigation}
                         logo={urlFor(siteSettings.logo).url()}
                         
+                    />
+                    <Slider 
+                        images={pageData.imageCarousel}
                     />
                 </section>
                 <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
@@ -47,8 +50,8 @@ export default function Home({ data }) {
                 </section>
                 <section className="w-screen lg:h-[450px]">
                     <HeroBanner 
-                        image={pageData.hero.image} 
-                        filter={true}
+                        // image={pageData.hero.image} 
+                        // filter={true}
                     >
                         <div className="lg:my-4 lg:mx-10 lg:px-8 lg:w-96 lg:h-96">
                             <TextBox 
