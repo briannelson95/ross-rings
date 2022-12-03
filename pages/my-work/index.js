@@ -18,13 +18,14 @@ export default function Products({ data }) {
   const mobile = data.siteSettings.favicon;
   const siteSettings = data.siteSettings;
   const products = data.products;
-  const hero = data.favorite[0];
   let seo = pageData.seo;
 
   return (
     <>
       <SEO 
-        title={seo.title ? seo.title : `${pageData.title} - ${data.siteSettings.title}`} 
+        title={seo ? seo.title : `${pageData.title} - ${siteSettings.title}`} 
+        description={seo ? seo.description : siteSettings.description}
+        image={seo ? seo.image : siteSettings.image}
         icon={urlFor(siteSettings.seo.icon).url()}  
       />
       <main className=''>

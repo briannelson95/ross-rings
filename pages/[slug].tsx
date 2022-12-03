@@ -1,21 +1,25 @@
 import React from 'react'
 import { allPages } from '../lib/queries';
 import { client } from '../lib/sanity';
-import SEO from '../components/SEO';
 import { urlFor } from '../lib/modules';
 import Navbar from '../components/Navbar';
 import NewNav from '../components/NewNav';
 import HeroBanner from '../components/HeroBanner';
 import TextComponent from '../components/TextComponent';
+import SEO from '../components/SEO';
+import Footer from '../components/Footer';
 
 export default function Page({ data }) {
     const pageData = data.pageData;
     console.log(pageData)
     const siteSettings = data.siteSettings;
+    let seo = pageData.seo;
     return (
         <>
             <SEO 
-                title={`${pageData.title} - ${data.siteSettings.title}`} 
+                title={seo ? seo.title : `${pageData.title} - ${siteSettings.title}`} 
+                description={seo ? seo.description : siteSettings.description}
+                image={seo ? seo.image : siteSettings.image}
                 icon={urlFor(siteSettings.seo.icon).url()}  
             />
             <main>
@@ -42,6 +46,9 @@ export default function Page({ data }) {
                     </div>
                 </section>
             </main>
+            <Footer
+                navigation={siteSettings.navigation}
+            />
         </>
     )
 }

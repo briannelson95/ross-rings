@@ -7,7 +7,6 @@ export default {
             name: 'title',
             title: 'Title',
             type: 'string',
-            description: 'Heads up! This will override the page title',
             validation: Rule => Rule.max(60).warning('Should be under 60 characters')
         },
         {
