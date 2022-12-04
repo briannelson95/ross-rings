@@ -47,6 +47,7 @@ export default function Products({ data }) {
         </section>
         <Footer
           navigation={siteSettings.navigation}
+          logo={urlFor(siteSettings.logo).url()}
         />
       </main>
     </>

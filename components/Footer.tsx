@@ -1,12 +1,27 @@
 import Link from "next/link";
+import Image from 'next/image';
 
-const Footer = ({ navigation }) => {
+const Footer = ({ navigation, logo }) => {
     return (
         <>
             <footer className="mt-6 px-10 py-4 pb-6 2xl:mx-52 flex flex-col items-center">
                 <hr className="w-4/5 pb-16" />
-                <div className="mb-8">
+                <nav className="mb-8 w-full">
                     <ul className='flex items-center mx-6 lg:mx-4'>
+                        <li className="first:mr-auto">
+                            <Link
+                                href={'/'}
+                                className=""
+                            >
+                                <Image 
+                                    src={logo}
+                                    height={122}
+                                    width={122}
+                                    alt={'logo.alt'}
+                                    className="lg:h-[100px] lg:w-[100px]"
+                                />
+                            </Link>
+                        </li>
                         {navigation.map((item, index) => (
                             <li key={index} className="px-8">
                                 <Link 
@@ -19,7 +34,7 @@ const Footer = ({ navigation }) => {
                             </li>
                         ))}
                     </ul>
-                </div>
+                </nav>
                 <div className="text-center">
                     Website Developed by <a className="underline" href="https://www.briannelson.dev/" target="_blank" rel="noreferrer">Brian Nelson</a>
                 </div>

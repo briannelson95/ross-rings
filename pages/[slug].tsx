@@ -48,6 +48,7 @@ export default function Page({ data }) {
             </main>
             <Footer
                 navigation={siteSettings.navigation}
+                logo={urlFor(siteSettings.logo).url()}
             />
         </>
     )

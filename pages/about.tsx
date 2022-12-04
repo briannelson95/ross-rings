@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import HeroBanner from "../components/HeroBanner";
 import NewNav from "../components/NewNav";
 import SEO from "../components/SEO";
@@ -34,6 +35,10 @@ export default function About({ data }) {
                     </div>
                 </section>
             </main>
+            <Footer
+                navigation={siteSettings.navigation}
+                logo={urlFor(siteSettings.logo).url()}
+            />
         </>
     )
 }

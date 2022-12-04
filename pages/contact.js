@@ -7,6 +7,7 @@ import { urlFor } from '../lib/modules'
 import Navbar from '../components/Navbar';
 import Button from '../components/Button';
 import Link from 'next/link';
+import Footer from '../components/Footer';
 
 export default function Contact({ data }) {
   const mobile = data.siteSettings.favicon;
@@ -25,6 +26,10 @@ export default function Contact({ data }) {
       <main>
         {data.siteSettings.title}
       </main>
+      <Footer
+          navigation={siteSettings.navigation}
+          logo={urlFor(siteSettings.logo).url()}
+      />
     </>
   )
 }

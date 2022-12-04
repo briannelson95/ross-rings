@@ -19,3 +19,9 @@ html {
 .productRow:nth-of-type(even) {
     direction: rtl;
 }
+
+.slideDown {
+    transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    overflow: hidden;
+    box-sizing: border-box;
+}

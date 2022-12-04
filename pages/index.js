@@ -1,14 +1,8 @@
 import { client } from "../lib/sanity";
 import { homepage } from "../lib/queries";
 import SEO from '../components/SEO'
-import Image from "next/image";
 import { urlFor } from '../lib/modules'
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer'
-import Button from '../components/Button';
-import Link from 'next/link';
-import TextComponent from '../components/TextComponent';
-import SmallGridProducts from '../components/SmallGridProducts';
 import Grid from "../components/Grid";
 
 import HeroBanner from "../components/HeroBanner";
@@ -56,7 +50,7 @@ export default function Home({ data }) {
                         image={data.process.image} 
                         filter={data.process.filter}
                     >
-                        <div className="lg:my-4 lg:mx-10 lg:px-8 lg:w-96 lg:h-96">
+                        <div className="lg:my-4 lg:w-96 lg:h-96">
                             <TextBox 
                                 text={data.process.excerpt} 
                                 buttonText={'View our process'}
@@ -79,6 +73,7 @@ export default function Home({ data }) {
             </main>
             <Footer
                 navigation={siteSettings.navigation}
+                logo={urlFor(siteSettings.logo).url()}
             />
         </>
     )
