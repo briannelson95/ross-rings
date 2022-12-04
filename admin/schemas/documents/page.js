@@ -45,6 +45,12 @@ export default {
             type: 'mainImage'
         },
         {
+            name: 'excerpt',
+            title: 'Excerpt',
+            type: 'string',
+            description: 'Use this to display preview text on other pages.'
+        },
+        {
             name: 'seo',
             title: 'SEO',
             type: 'openGraph',

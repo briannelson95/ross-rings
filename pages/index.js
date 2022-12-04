@@ -31,36 +31,37 @@ export default function Home({ data }) {
                 title={`${data.siteSettings.title}`} 
                 icon={urlFor(siteSettings.seo.icon).url()}  
             />
-            <main className="w-screen overflow-hidden">
-                <section className="h-screen relative text-white">
-                    <Hero />
-                    <div className="pt-8" />
-                    <NewNav
-                        navigation={siteSettings.navigation}
-                        logo={urlFor(siteSettings.logo).url()}
-                        
-                    />
-                    <div className="h-full absolute top-0 left-32">
+            <main className="w-screen overflow-hidden relative">
+                <Hero>
+                    <div className="relative pt-8 z-20">
+                        <NewNav
+                            navigation={siteSettings.navigation}
+                            logo={urlFor(siteSettings.logo).url()}
+                        />
+                    </div>
+                    <div className="mt-[-8em]">
                         <Slider 
                             images={pageData.imageCarousel}
                         />
                     </div>
-                </section>
+                </Hero>
                 <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
                     <Grid
                         items={products}
                     />
                 </section>
+                
                 <section className="w-screen lg:h-[450px]">
                     <HeroBanner 
-                        // image={pageData.hero.image} 
-                        // filter={true}
+                        image={data.process.image} 
+                        filter={data.process.filter}
                     >
                         <div className="lg:my-4 lg:mx-10 lg:px-8 lg:w-96 lg:h-96">
                             <TextBox 
-                                text={pageData.content} 
+                                text={data.process.excerpt} 
                                 buttonText={'View our process'}
-                                href={'/'}
+                                href={data.process.slug.current}
+                                heading={data.process.title}
                             />
                         </div>
                     </HeroBanner>

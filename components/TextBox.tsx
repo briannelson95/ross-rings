@@ -3,12 +3,13 @@ import TextComponent from "./TextComponent";
 
 const TextBox = ({ heading, text, href, buttonText }) => {
     return (
-        <div className="w-full h-full bg-norway text-white ">
-            {/* <h2 className="text-6xl">{heading}</h2> */}
+        <div className="w-full h-full bg-norway text-white relative">
             <div className="px-8 py-4 pt-8">
-                <TextComponent text={text} />
-                <div className="mt-10"/>
-                <Button href={href} text={buttonText} />
+                <h2 className="text-6xl mb-6">{heading}</h2>
+                <p>{text}</p>
+                <div className="absolute bottom-10">
+                    <Button href={href} text={buttonText} />
+                </div>
             </div>
         </div>
     )
