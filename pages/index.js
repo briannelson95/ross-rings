@@ -22,6 +22,7 @@ export default function Home({ data }) {
     const pageData = data.pageData[0];
     const mobile = data.siteSettings.favicon;
     const siteSettings = data.siteSettings;
+    console.log(siteSettings)
     const products = pageData.featuredProducts
     const testimonials = data.testimonials;
     return (
@@ -31,7 +32,7 @@ export default function Home({ data }) {
                 icon={urlFor(siteSettings.seo.icon).url()}  
             />
             <main className="w-screen overflow-hidden">
-                <section className="h-screen relative overflow-hidden">
+                <section className="h-screen relative text-white">
                     <Hero />
                     <div className="pt-8" />
                     <NewNav
@@ -39,9 +40,11 @@ export default function Home({ data }) {
                         logo={urlFor(siteSettings.logo).url()}
                         
                     />
-                    <Slider 
-                        images={pageData.imageCarousel}
-                    />
+                    <div className="h-full absolute top-0 left-32">
+                        <Slider 
+                            images={pageData.imageCarousel}
+                        />
+                    </div>
                 </section>
                 <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
                     <Grid

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaEtsy, FaInstagram } from "react-icons/fa";
 
 export default function NewNav({ navigation, logo }) {
     return(
@@ -31,6 +32,18 @@ export default function NewNav({ navigation, logo }) {
                         </Link>
                     </li>
                 ))}
+                <ul className="last:ml-auto flex h-full px-10 mx-52 lg:mx-10 lg:px-6 text-xl">
+                    <li className='flex items-center mx-6 hover:underline ease-in-out lg:mx-4'>
+                        <a href="https://www.instagram.com/ross_rings" target="_blank" rel="">
+                            <FaInstagram />
+                        </a>
+                    </li>
+                    <li className='flex items-center mx-6 hover:underline ease-in-out lg:mx-4'>
+                        <a href="https://www.etsy.com/shop/RossRingsByMaisie" target="_blank" rel="">
+                            <FaEtsy />
+                        </a>
+                    </li>
+                </ul>
             </ul>
         </nav>
     )
