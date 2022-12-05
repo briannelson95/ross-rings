@@ -5,7 +5,7 @@ import { IoMdArrowDropup, IoMdArrowDropdown } from 'react-icons/io'
 const Slider = ({ images }) => {
     const [current, setCurrent] = useState(0)
     const length = images.length;
-    var autoScroll: boolean = true;
+    var autoScroll: boolean = false;
     let slideInterval;
     let intervalTime: number = 6000
 
@@ -32,9 +32,9 @@ const Slider = ({ images }) => {
     }, [current])
 
     return (
-        <div className='relative h-full flex justify-center items-center'>
+        <div className='relative h-full flex justify-center items-center lg:pt-10'>
             {images.length > 1 
-                ? <div className='m-16 h-96 space-y-80'>
+                ? <div className='xl:m-16 xl:h-96 xl:space-y-80 lg:space-y-64 lg:h-64 lg:m-10'>
                     <IoMdArrowDropup onClick={prevSlide} size={20} />
                     <IoMdArrowDropdown onClick={nextSlide} size={20} />
                 </div>
@@ -45,18 +45,21 @@ const Slider = ({ images }) => {
                     <div key={index} className={`ease-in-out duration-300 ${index === current ? 'active:opacity-100' : 'opacity-0'}`}>
                         {index === current && (
                             <div className='flex items-center justify-center'>
-                                <div className='w-[603px] leading-[84px]'>
-                                    <h1 className='text-[59px]'>
+                                <div className='w-[603px] xl:w-[580px] leading-[72px]'>
+                                    <h1 className='text-[59px] xl:text-6xl lg:text-3xl'>
                                         {item.caption}
                                     </h1>
                                 </div>
-                                <Image
-                                    src={item.asset.url}
-                                    height={700}
-                                    width={700}
-                                    alt={item.alt}
-                                    className='h-full'
-                                />
+                                <div className=''>
+                                    <Image
+                                        src={item.asset.url}
+                                        height={700}
+                                        width={700}
+                                        alt={item.alt}
+                                        className='2xl:w-full xl:w-3/4 lg:w-4/6'
+                                        loading='eager'
+                                    />
+                                </div>
                             </div>
                         )}
                     </div>

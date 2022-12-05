@@ -10,7 +10,7 @@ export default function NewNav({ navigation, logo }) {
                 <li>
                     <Link
                         href={'/'}
-                        className="first:mr-56"
+                        className="xl:first:mr-56 lg:first:mr-32"
                     >
                         <Image 
                             src={logo}
