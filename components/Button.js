@@ -5,7 +5,7 @@ const Button = ({ text, href }) => {
         <>
             <Link
                 href={href}
-                className="border border-white rounded-full bg-white bg-opacity-25 mt-4 py-4 px-12 hover:bg-white hover:text-finlandia ease-in-out duration-200"
+                className="border border-white rounded-full bg-white bg-opacity-25 mt-4 py-4 px-12 hover:bg-white hover:text-finlandia ease-in-out duration-200 text-poppins"
             >
                 {text}
             </Link>
