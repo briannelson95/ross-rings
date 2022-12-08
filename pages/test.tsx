@@ -1,3 +1,4 @@
+import InstagramFeed from "../components/Instagram";
 import Slider from "../components/Slider";
 import { homepage } from "../lib/queries"
 import { client } from "../lib/sanity"
@@ -10,8 +11,8 @@ export default function test({ data }) {
     const testimonials = data.testimonials;
     return (
         <>
-            <Slider 
-                images={pageData.imageCarousel}
+            <InstagramFeed 
+                username="briannelson__"
             />
         </>
     )

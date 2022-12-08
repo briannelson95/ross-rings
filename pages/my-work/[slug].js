@@ -76,6 +76,18 @@ export default function Page({ data }) {
                         
                     />
                 </section>
+                {lightboxDisplay ?
+                    <div {...swipeHandlers} className="z-1 fixed top-0 left-0 w-screen h-screen flex items-center justify-center md:justify-between bg-black/75" >
+                        <div className="absolute top-5 right-4 text-white text-3xl" onClick={hideLightbox}><HiX height={40} width={40} /></div>
+                        <button onClick={showPrev} className='hidden md:block md:mx-4 md:text-5xl'>
+                            <HiArrowCircleLeft width={20} height={20} className='text-light-blue-100' />
+                        </button>
+                        <Image src={urlFor(imagesToShow).url()} width={1000} height={1000} className='w-7/8 md:w-3/4' />
+                        <button onClick={showNext} className='hidden md:block md:mx-4 md:text-5xl'>
+                            <HiArrowCircleRight width={20} height={20} className='text-light-blue-100' />
+                        </button>
+                    </div>
+                : ''}
                 <div className="my-24" />
                 <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
                     <SingleProduct
@@ -86,6 +98,24 @@ export default function Page({ data }) {
                         href={productData.link}
                     />
                 </section>
+                <section className="my-1 px-10 2xl:mx-52 lg:m-10 lg:px-8">
+                    {relatedImages != undefined ? (
+                        <div className="grid grid-cols-4 gap-4">
+                            {relatedImages.map((item, index) => (
+                                <div className="aspect-square" key={index}>
+                                    <Image
+                                        src={urlFor(item.asset._ref).url()}
+                                        width={1000}
+                                        height={1000}
+                                        onClick={() => showImage(item)}
+                                        className='object-cover h-full w-full'
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    ) : <></>}
+                </section>
+                
             </main>
        </>
     )

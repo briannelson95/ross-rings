@@ -112,15 +112,15 @@ module.exports = {
       'poppins': ['Poppins', 'sans-serif'],
       'myanmar': ['myanmar']
     },
-    fontSize: {
-      sm: ['14px', '20px'],
-      base: ['18px', '24px'],
-      lg: ['20px', '28px'],
-      xl: ['24px', '32px'],
-      "2xl": ['36px'],
-      "3xl": ['46px'],
-      "6xl": ['60px']
-    },
+    // fontSize: {
+    //   sm: ['14px', '20px'],
+    //   base: ['18px', '24px'],
+    //   lg: ['20px', '28px'],
+    //   xl: ['24px', '32px'],
+    //   "2xl": ['36px'],
+    //   "3xl": ['46px'],
+    //   "6xl": ['60px']
+    // },
     transitionProperty: {
       'width': 'width',
       'height': 'height'
