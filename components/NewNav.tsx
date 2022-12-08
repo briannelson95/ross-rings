@@ -2,7 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaEtsy, FaInstagram } from "react-icons/fa";
 
-export default function NewNav({ navigation, logo }) {
+interface NavProps {
+    navigation: any;
+    logo: string;
+}
+
+export default function NewNav(Props: NavProps) {
     return(
         <nav className="relative h-[122px] text-[20px] text-dark-blue-900 lg:h-[100px] lg:text-base">
             {/* desktop nav */}
@@ -13,7 +18,7 @@ export default function NewNav({ navigation, logo }) {
                         className="xl:first:mr-56 lg:first:mr-32"
                     >
                         <Image 
-                            src={logo}
+                            src={Props.logo}
                             height={122}
                             width={122}
                             alt={'logo.alt'}
@@ -21,7 +26,7 @@ export default function NewNav({ navigation, logo }) {
                         />
                     </Link>
                 </li>
-                {navigation.map((item, index) => (
+                {Props.navigation.map((item, index) => (
                     <li key={index} className='flex items-center mx-6 hover:underline ease-in-out lg:mx-4'>
                         <Link 
                             key={index} 

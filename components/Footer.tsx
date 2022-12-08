@@ -1,7 +1,12 @@
 import Link from "next/link";
 import Image from 'next/image';
 
-const Footer = ({ navigation, logo }) => {
+interface FooterProps {
+    navigation: any;
+    logo: string;
+}
+
+const Footer = (Props: FooterProps) => {
     return (
         <>
             <footer className="mt-6 px-10 py-4 pb-6 2xl:mx-52 flex flex-col items-center">
@@ -14,7 +19,7 @@ const Footer = ({ navigation, logo }) => {
                                 className=""
                             >
                                 <Image 
-                                    src={logo}
+                                    src={Props.logo}
                                     height={122}
                                     width={122}
                                     alt={'logo.alt'}
@@ -22,7 +27,7 @@ const Footer = ({ navigation, logo }) => {
                                 />
                             </Link>
                         </li>
-                        {navigation.map((item, index) => (
+                        {Props.navigation.map((item, index) => (
                             <li key={index} className="px-8">
                                 <Link 
                                     key={index} 
