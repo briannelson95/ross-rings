@@ -8,7 +8,7 @@ const TextBox = ({ heading, text, href, buttonText }) => {
                 <h2 className="text-6xl mb-6">{heading}</h2>
                 <p>{text}</p>
                 <div className="absolute bottom-10">
-                    <Button href={href} text={buttonText} />
+                    <Button href={href} text={buttonText} color={false} />
                 </div>
             </div>
         </div>
