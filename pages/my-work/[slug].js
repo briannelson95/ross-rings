@@ -12,7 +12,6 @@ import { useSwipeable } from 'react-swipeable';
 
 export default function Page({ data }) {
     const productData = data.productData;
-    console.log(productData)
     const relatedImages = productData.gallery;
     const mobile = data.siteSettings.favicon;
     const siteSettings = data.siteSettings;
@@ -30,7 +29,6 @@ export default function Page({ data }) {
     }
 
     const showNext = (e) => {
-        // e.stopPropagation()
         let currentIndex = relatedImages.indexOf(imagesToShow)
         if(currentIndex >= relatedImages.length - 1) {
             setLighboxDisplay(false)
@@ -42,7 +40,6 @@ export default function Page({ data }) {
     }
 
     const showPrev = (e) => {
-        // e.stopPropagation()
         let currentIndex = relatedImages.indexOf(imagesToShow)
           if(currentIndex <= 0) {
           setLighboxDisplay(false)

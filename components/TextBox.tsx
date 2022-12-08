@@ -1,5 +1,4 @@
 import Button from "./Button";
-import TextComponent from "./TextComponent";
 
 const TextBox = ({ heading, text, href, buttonText }) => {
     return (
@@ -8,7 +7,7 @@ const TextBox = ({ heading, text, href, buttonText }) => {
                 <h2 className="text-6xl mb-6">{heading}</h2>
                 <p>{text}</p>
                 <div className="absolute bottom-10">
-                    <Button href={href} text={buttonText} color={false} />
+                    <Button href={href} text={buttonText} />
                 </div>
             </div>
         </div>

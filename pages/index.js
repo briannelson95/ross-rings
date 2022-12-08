@@ -16,7 +16,6 @@ export default function Home({ data }) {
     const pageData = data.pageData[0];
     const mobile = data.siteSettings.favicon;
     const siteSettings = data.siteSettings;
-    console.log(siteSettings)
     const products = pageData.featuredProducts
     const testimonials = data.testimonials;
     return (
