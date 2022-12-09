@@ -9,7 +9,7 @@ interface FooterProps {
 const Footer = (Props: FooterProps) => {
     return (
         <>
-            <footer className="mt-6 px-10 py-4 pb-6 2xl:mx-52 flex flex-col items-center">
+            <footer className="hidden mt-6 px-10 py-4 pb-6 2xl:mx-52 lg:flex flex-col items-center">
                 <hr className="w-4/5 pb-16" />
                 <nav className="mb-8 w-full">
                     <ul className='flex items-center mx-6 lg:mx-4'>

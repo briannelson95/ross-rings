@@ -26,13 +26,13 @@ export default function Home({ data }) {
             />
             <main className="w-screen overflow-hidden relative">
                 <Hero>
-                    <div className="relative pt-8 z-20">
+                    <div className="relative pt-4 lg:pt-8 z-20">
                         <NewNav
                             navigation={siteSettings.navigation}
                             logo={urlFor(siteSettings.logo).url()}
                         />
                     </div>
-                    <div className="mt-[-8em]">
+                    <div className="lg:mt-[-8em]">
                         <Slider 
                             images={pageData.imageCarousel}
                         />
