@@ -14,6 +14,7 @@ import Slider from "../components/Slider";
 
 export default function Home({ data }) {
     const pageData = data.pageData[0];
+    console.log(pageData)
     const mobile = data.siteSettings.favicon;
     const siteSettings = data.siteSettings;
     const products = pageData.featuredProducts
@@ -32,9 +33,11 @@ export default function Home({ data }) {
                             logo={urlFor(siteSettings.logo).url()}
                         />
                     </div>
-                    <div className="lg:mt-[-8em]">
+                    <div className="lg:mt-[-8em] my-2 px-10 mt-4">
                         <Slider 
                             images={pageData.imageCarousel}
+                            buttonText={pageData.cta.title}
+                            href={pageData.cta.url.slug.current}
                         />
                     </div>
                 </Hero>
@@ -44,12 +47,12 @@ export default function Home({ data }) {
                     />
                 </section>
                 
-                <section className="w-screen lg:h-[450px]">
+                <section className="w-screen h-72 lg:h-[450px]">
                     <HeroBanner 
                         image={data.process.image} 
                         filter={data.process.filter}
                     >
-                        <div className="lg:my-4 lg:w-96 lg:h-96">
+                        <div className="my-0 lg:my-4 lg:w-96 lg:h-96">
                             <TextBox 
                                 text={data.process.excerpt} 
                                 buttonText={'View our process'}
