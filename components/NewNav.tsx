@@ -21,7 +21,7 @@ export default function NewNav(Props: NavProps) {
 
     })
     return(
-        <nav className="relative xl:h-[122px] text-[20px] text-dark-blue-900 lg:h-[100px] lg:text-base">
+        <nav className="z-50 relative xl:h-[122px] text-[20px] text-dark-blue-900 lg:h-[100px] lg:text-base">
             {/* mobile nav */}
             <ul {...swipeHandlers} className={`bg-light-blue-100 text-dark-blue-900 w-3/4 absolute mt-[-1rem] h-screen duration-300 ease-in-out transition-all ${menuOpen ? `translate-x-0` : `-translate-x-full`}`}>
                 <Link

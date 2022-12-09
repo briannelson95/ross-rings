@@ -14,14 +14,14 @@ export default function About({ data }) {
     return (
         <>
             <main>
-                <section className="h-full w-full relative pt-8 lg:mb-16">
+                <section className="h-full w-full relative pt-4 lg:pt-8 lg:mb-16">
                     <NewNav
                         navigation={siteSettings.navigation}
                         logo={urlFor(siteSettings.logo).url()}
                         
                     />
                 </section>
-                <section className='w-screen lg:h-[450px]'>
+                <section className='w-screen h-72 lg:h-[450px]'>
                     <HeroBanner
                         image={pageData.image}
                         title={pageData.title}

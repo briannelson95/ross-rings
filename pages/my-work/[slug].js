@@ -66,7 +66,7 @@ export default function Page({ data }) {
                 icon={urlFor(siteSettings.seo.icon).url()}  
             />
             <main className="w-screen overflow-hidden relative">
-                <section className="h-full w-full relative pt-8 lg:mb-16">
+                <section className="h-full w-full relative pt-4 lg:pt-8 lg:mb-16">
                     <NewNav
                         navigation={siteSettings.navigation}
                         logo={urlFor(siteSettings.logo).url()}

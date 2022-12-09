@@ -34,7 +34,7 @@ const HeroBanner = (Props: BannerProps) => {
                 </div>
                 <div className="px-10 2xl:mx-52 absolute h-full flex items-center">
                     {Props.title 
-                        ?  <h1 className={`lg:text-[112px] 2xl:text-[133px] ${Props.filter ? 'text-white' : 'text-white'}`}>{Props.title}</h1>
+                        ?  <h1 className={`text-6xl lg:text-[112px] 2xl:text-[133px] ${Props.filter ? 'text-white' : 'text-white'}`}>{Props.title}</h1>
                         : Props.children}
                 </div>
             </div>
