@@ -8,13 +8,18 @@ const components = {
         h2: ({children}) => <h2 className='text-6xl leading-10'>{children}</h2>,
         h3: ({children}) => <h3 className='text-xl'>{children}</h3>,
         h4: ({children}) => <h4 className='text-lg'>{children}</h4>,
+        normal: ({children}) => <><p className='col-span-1'>{children}</p></>
     },
     list: {
         bullet: ({children}) => <ul className="mt-xl">{children}</ul>,
         number: ({children}) => <ol className="mt-lg">{children}</ol>,
     },
     types: {
-      mainImage: ({value}) => <Image src={urlFor(value).url()} height={500} width={500} alt={value.alt ? value.alt : ''} loading='lazy' className='h-full w-full' />,
+      mainImage: ({value}) => <>
+        <div className='aspect-squre h-80'>
+          <Image src={urlFor(value).url()} height={500} width={500} alt={value.alt ? value.alt : ''} loading='lazy' className='object-cover h-full w-full' />
+        </div>
+      </>,
     },
     marks: {
         // Ex. 1: custom renderer for the em / italics decorator
@@ -33,7 +38,11 @@ const components = {
 }
 
 const TextComponent = ({ text }) => {
-  return <PortableText value={text} components={components} />
+  return (
+    <div className='grid grid-cols-1 gap-24 lg:grid-cols-2'>
+      <PortableText value={text} components={components} />
+    </div>
+  )
 }
 
 export default TextComponent

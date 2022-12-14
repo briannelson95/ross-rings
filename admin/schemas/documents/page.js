@@ -23,14 +23,14 @@ export default {
             }
         },
         {
+            name: 'content',
+            title: 'Main Content',
+            type: 'blockContent',
+        },
+        {
             name: 'featuredTitle',
             title: 'Featured Title',
             type: 'string'
-        },
-        {
-            name: 'content',
-            title: 'Main Content',
-            type: 'blockContent'
         },
         {
             name: 'filter',
@@ -43,6 +43,12 @@ export default {
             name: 'image',
             title: 'Featured Image',
             type: 'mainImage'
+        },
+        {
+            name: 'textRepeater',
+            title: 'Text Repeater',
+            type: 'array',
+            of: [{type: 'repeaterBlocks'}],
         },
         {
             name: 'excerpt',

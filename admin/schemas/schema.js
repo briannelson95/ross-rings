@@ -21,6 +21,7 @@ import work from './documents/work'
 import testimonials from './documents/testimonials'
 import carousel from './objects/carousel'
 import figure from './objects/figure'
+import repeaterBlocks from './objects/repeaterBlocks'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -49,5 +50,6 @@ export default createSchema({
     testimonials,
     carousel,
     figure,
+    repeaterBlocks,
   ]),
 })

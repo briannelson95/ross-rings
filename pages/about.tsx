@@ -30,9 +30,7 @@ export default function About({ data }) {
                     </HeroBanner>
                 </section>
                 <section className="px-10 2xl:mx-52 lg:mx-10 lg:p-8">
-                    <div className='mt-32 grid grid-cols-2 gap-4'>
-                        <TextComponent text={pageData.content} />
-                    </div>
+                    <TextComponent text={pageData.content} />
                 </section>
             </main>
             <Footer

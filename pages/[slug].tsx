@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 
 export default function Page({ data }) {
     const pageData = data.pageData;
-    console.log(pageData)
+    console.log(pageData.content)
     const siteSettings = data.siteSettings;
     let seo = pageData.seo;
     return (
@@ -41,9 +41,7 @@ export default function Page({ data }) {
                     <div className='flex justify-center my-4'>
                         <h2 className='lg:text-3xl 2xl:text-6xl text-pale-sky leading-[84px] text-center'>{pageData.featuredTitle}</h2>
                     </div>
-                    <div className='grid grid-cols-2 gap-4'>
-                        <TextComponent text={pageData.content} />
-                    </div>
+                    <TextComponent text={pageData.content} />
                 </section>
             </main>
             <Footer
