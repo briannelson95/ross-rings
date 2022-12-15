@@ -39,8 +39,8 @@ const components = {
 
 const TextComponent = ({ text }) => {
   return (
-    <div>
-      <PortableText className='grid grid-cols-1 gap-24 lg:grid-cols-2 test' value={text} components={components} />
+    <div className='grid grid-cols-1 gap-24 lg:grid-cols-2 test'>
+      <PortableText value={text} components={components} />
     </div>
   )
 }
