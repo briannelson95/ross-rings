@@ -15,6 +15,7 @@
     "@glidejs/glide": "^3.6.0",
     "@next/font": "^13.0.1",
     "@portabletext/react": "^2.0.0",
+    "@sendgrid/mail": "^7.7.0",
     "groq": "^2.33.2",
     "next": "13.0.0",
     "next-sanity": "^1.0.1",
