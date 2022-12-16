@@ -1,26 +1,31 @@
 const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const msg = {
+  to: 'dev.briannelson@gmail.com',
+  from: 'dev.briannelson@gmail.com', // Use the email address or domain you verified above
+  subject: 'Sending with Twilio SendGrid is Fun',
+  text: 'and easy to do anywhere, even with Node.js',
+  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+};
+//ES6
+sgMail
+  .send(msg)
+  .then(() => {}, error => {
+    console.error(error);
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-
-async function sendMail(req, res) {
-    try {
-        console.log("REQ.BODY", req.body)
-        await sgMail.send({
-            to: 'dev.briannelson@gmail.com',
-            from: 'dev.briannelson@gmail.com',
-            html: `
-                <div>
-                    <h3>You've got a new mail from ${req.body.name}, their email is: ✉️${req.body.email} </h3>
-                    <p>Message:</p>
-                    <p>${req.body.message}</p>
-                </div>
-            `
-        });
-    } catch(error) {
-        console.log(error)
-        return res.status(error.statusCode || 500).json({ error: error.message });
+    if (error.response) {
+      console.error(error.response.body)
     }
-    return res.status(200).json({ error: "" });
-}
+  });
+//ES8
+(async () => {
+  try {
+    await sgMail.send(msg);
+  } catch (error) {
+    console.error(error);
 
-export default sendMail;
+    if (error.response) {
+      console.error(error.response.body)
+    }
+  }
+})();
