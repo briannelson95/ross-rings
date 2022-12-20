@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/index.js", "components/Layout.js", "pages/_app.tsx", "components/Navbar.js", "components/Hero.js"  ],
+, "pages/index.js", "components/Layout.js", "pages/_app.tsx", "components/Navbar.js", "components/Hero.js", "pages/api/contact.js"  ],
   "exclude": [
     "node_modules"
   ]
