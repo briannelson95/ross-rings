@@ -98,7 +98,7 @@ export default function ContactForm() {
           disabled={!values.name || !values.email || !values.message}
           type="submit"
           onClick={onSubmit}
-          className="px-10 mt-8 py-2 bg-[#130F49] text-white font-light rounded-md text-lg flex flex-row items-center"
+          className="px-10 mt-8 py-2 bg-firefly text-white font-light rounded-md text-lg flex flex-row items-center disabled:opacity-75"
         >
           Submit
         </button>
