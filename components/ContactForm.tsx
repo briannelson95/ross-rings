@@ -1,34 +1,31 @@
 import React, { useState } from 'react';
 
+const initValues = {
+  name: "",
+  email: "",
+  message: ""
+}
+
+const initState = {values: initValues}
+
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e) => {
-    const res = await fetch("/api/sendgrid", {
-      body: JSON.stringify({
-        email: email,
-        fullname: name,
-        message: message,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
+  const [state, setState] = useState(initState);
+  const {values} = state;
 
-    const { error } = await res.json();
-    if (error) {
-      console.log(error);
-      return;
+  const handleChange = ({target}) => setState((prev) => ({
+    ...prev, 
+    values: {
+      ...prev.values,
+      [target.name]: target.value
     }
-  }
-  console.log(name, email, message);
+  }))
 
   return (
     <form
-      onSubmit={handleSubmit}
       className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
     >
       <h1 className="text-2xl font-bold dark:text-gray-50">
@@ -39,15 +36,14 @@ export default function ContactForm() {
         htmlFor="fullname"
         className="text-gray-500 font-light mt-8 dark:text-gray-50"
       >
-        Full name<span className="text-red-500 dark:text-gray-50">*</span>
+        Full Name<span className="text-red-500 dark:text-gray-50">*</span>
       </label>
       <input
         type="text"
-        value={name}
-        onChange={(e) => {
-          setName(e.target.value);
-        }}
-        name="fullname"
+        value={values.name}
+        onChange={handleChange}
+        name="name"
+        required
         className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
       />
          
@@ -61,10 +57,9 @@ export default function ContactForm() {
       <input
         type="email"
         name="email"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
+        required
+        value={values.email}
+        onChange={handleChange}
         className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
       />
           
@@ -79,15 +74,15 @@ export default function ContactForm() {
       </label>
       <textarea
         name="message"
-        value={message}
-        onChange={(e) => {
-          setMessage(e.target.value);
-        }}
+        required
+        value={values.message}
+        onChange={handleChange}
         className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
       ></textarea>
           
       <div className="flex flex-row items-center justify-start">
         <button
+          disabled={!values.name || !values.email || !values.message}
           type="submit"
           className="px-10 mt-8 py-2 bg-[#130F49] text-white font-light rounded-md text-lg flex flex-row items-center"
         >
