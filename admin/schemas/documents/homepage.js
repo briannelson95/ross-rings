@@ -26,6 +26,12 @@ export default {
             title: 'Image Carousel'
         },
         {
+            name: 'autoScroll',
+            title: 'Auto Scroll',
+            type: 'boolean',
+            description: 'Do you want the Carousel Images to auto scroll? If turned on, they will scroll every 6 seconds.'
+        },
+        {
             name: 'cta',
             title: 'Call to Action',
             type: 'cta',
@@ -40,7 +46,7 @@ export default {
             name: 'featuredProducts',
             title: 'Featured Products',
             type: 'featuredProduct',
-            description: 'Only the first 4 items will show'
+            description: 'Only the first 5 items will show'
         }
     ],
 }

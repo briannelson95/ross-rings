@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 import { IoMdArrowDropup, IoMdArrowDropdown } from 'react-icons/io'
 import Button from './Button';
 
-const Slider = ({ images, buttonText, href }) => {
+const Slider = ({ images, buttonText, href, autoScroll }) => {
     const [current, setCurrent] = useState(0)
     const length = images.length;
-    var autoScroll: boolean = false;
+    // var autoScroll: boolean = false;
     let slideInterval;
     let intervalTime: number = 6000
 
@@ -35,9 +35,10 @@ const Slider = ({ images, buttonText, href }) => {
     return (
         <div className='relative h-full flex justify-center items-center lg:pt-10'>
             {images.length > 1 
-                ? <div className='hidden md:block xl:m-16 xl:h-96 xl:space-y-80 lg:space-y-64 lg:h-64 lg:m-10'>
-                    <IoMdArrowDropup onClick={prevSlide} size={20} />
-                    <IoMdArrowDropdown onClick={nextSlide} size={20} />
+                ? <div className='hidden md:block xl:m-16 xl:h-96 xl:space-y-6 lg:space-y-64 lg:h-64 lg:m-10'>
+                    <IoMdArrowDropup onClick={prevSlide} size={20} className='hover:cursor-pointer' />
+                    <div className='border-l border-white h-3/4 ml-[10px]' />
+                    <IoMdArrowDropdown onClick={nextSlide} size={20} className='hover:cursor-pointer' />
                 </div>
                 : ''
             }
@@ -50,9 +51,7 @@ const Slider = ({ images, buttonText, href }) => {
                                     <h1 className='text-4xl xl:text-6xl lg:text-3xl text-center lg:text-left'>
                                         {item.caption}
                                     </h1>
-                                    <div className='text-center'>
-                                        <Button text={buttonText} href={href} />
-                                    </div>
+                                    <Button text={buttonText} href={href} />
                                 </div>
                                 <div className=''>
                                     <Image

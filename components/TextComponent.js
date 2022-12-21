@@ -8,7 +8,7 @@ const components = {
         h2: ({children}) => <h2 className='text-6xl leading-10'>{children}</h2>,
         h3: ({children}) => <h3 className='text-xl'>{children}</h3>,
         h4: ({children}) => <h4 className='text-lg'>{children}</h4>,
-        normal: ({children}) => <><p className='col-span-1'>{children}</p></>
+        normal: ({children}) => <><p>{children}</p></>
     },
     list: {
         bullet: ({children}) => <ul className="mt-xl">{children}</ul>,
@@ -39,7 +39,7 @@ const components = {
 
 const TextComponent = ({ text }) => {
   return (
-    <div className='grid grid-cols-1 gap-24 lg:grid-cols-2 test'>
+    <div className=''>
       <PortableText value={text} components={components} />
     </div>
   )

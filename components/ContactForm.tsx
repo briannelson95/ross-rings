@@ -10,10 +10,6 @@ const initValues = {
 const initState = {values: initValues}
 
 export default function ContactForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
   const [state, setState] = useState(initState);
   const { values } = state;
 
@@ -43,66 +39,68 @@ export default function ContactForm() {
   }
 
   return (
-    <form
-      className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
-    >
-      <h1 className="text-2xl font-bold dark:text-gray-50">
-        Send a message
-      </h1>
-      <label
-        htmlFor="fullname"
-        className="text-gray-500 font-light mt-8 dark:text-gray-50"
+    <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
+      <form
+        className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
       >
-        Full Name<span className="text-red-500 dark:text-gray-50">*</span>
-      </label>
-      <input
-        type="text"
-        value={values.name}
-        onChange={handleChange}
-        name="name"
-        required
-        className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
-      />
-
-      <label
-        htmlFor="email"
-        className="text-gray-500 font-light mt-4 dark:text-gray-50"
-      >
-        Email
-      </label>
-      <input
-        type="email"
-        name="email"
-        required
-        value={values.email}
-        onChange={handleChange}
-        className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
-      />
- 
-      <label
-        htmlFor="message"
-        className="text-gray-500 font-light mt-4 dark:text-gray-50"
-      >
-        Message
-      </label>
-      <textarea
-        name="message"
-        required
-        value={values.message}
-        onChange={handleChange}
-        className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
-      />
-          
-      <div className="flex flex-row items-center justify-start">
-        <button
-          disabled={!values.name || !values.email || !values.message}
-          type="submit"
-          onClick={onSubmit}
-          className="px-10 mt-8 py-2 bg-firefly text-white font-light rounded-md text-lg flex flex-row items-center disabled:opacity-75"
+        <h1 className="text-2xl font-bold dark:text-gray-50">
+          Send a message
+        </h1>
+        <label
+          htmlFor="fullname"
+          className="text-gray-500 font-light mt-8 dark:text-gray-50"
         >
-          Submit
-        </button>
-      </div>
-    </form>
+          Full Name<span className="text-red-500 dark:text-gray-50">*</span>
+        </label>
+        <input
+          type="text"
+          value={values.name}
+          onChange={handleChange}
+          name="name"
+          required
+          className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+        />
+
+        <label
+          htmlFor="email"
+          className="text-gray-500 font-light mt-4 dark:text-gray-50"
+        >
+          Email
+        </label>
+        <input
+          type="email"
+          name="email"
+          required
+          value={values.email}
+          onChange={handleChange}
+          className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+        />
+  
+        <label
+          htmlFor="message"
+          className="text-gray-500 font-light mt-4 dark:text-gray-50"
+        >
+          Message
+        </label>
+        <textarea
+          name="message"
+          required
+          value={values.message}
+          onChange={handleChange}
+          className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+        />
+            
+        <div className="flex flex-row items-center justify-start">
+          <button
+            disabled={!values.name || !values.email || !values.message}
+            type="submit"
+            onClick={onSubmit}
+            className="px-10 mt-8 py-2 bg-firefly text-white font-light rounded-md text-lg flex flex-row items-center disabled:opacity-75"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </section>
   );
 }

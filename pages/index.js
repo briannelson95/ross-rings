@@ -14,7 +14,7 @@ import Slider from "../components/Slider";
 
 export default function Home({ data }) {
     const pageData = data.pageData[0];
-    console.log(pageData)
+    // console.log(pageData)
     const mobile = data.siteSettings.favicon;
     const siteSettings = data.siteSettings;
     const products = pageData.featuredProducts
@@ -38,6 +38,7 @@ export default function Home({ data }) {
                             images={pageData.imageCarousel}
                             buttonText={pageData.cta.title}
                             href={pageData.cta.url.slug.current}
+                            autoScroll={false}
                         />
                     </div>
                 </Hero>
