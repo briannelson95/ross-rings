@@ -28,6 +28,17 @@ export default {
             type: 'blockContent',
         },
         {
+            name: 'textRepeater',
+            title: 'Text Repeater',
+            type: 'array',
+            of: [
+                {type: 'repeaterBlocks'},
+                {type: 'textObject'},
+                {type: 'image'}
+            ],
+            description: 'Use this if you want the content to contain both Images and Text'
+        },
+        {
             name: 'featuredTitle',
             title: 'Featured Title',
             type: 'string'
@@ -44,12 +55,7 @@ export default {
             title: 'Featured Image',
             type: 'mainImage'
         },
-        {
-            name: 'textRepeater',
-            title: 'Text Repeater',
-            type: 'array',
-            of: [{type: 'repeaterBlocks'}],
-        },
+        
         {
             name: 'excerpt',
             title: 'Excerpt',

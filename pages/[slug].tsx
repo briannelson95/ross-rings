@@ -8,10 +8,12 @@ import HeroBanner from '../components/HeroBanner';
 import TextComponent from '../components/TextComponent';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
+import Image from 'next/image';
 
 export default function Page({ data }) {
     const pageData = data.pageData;
-    console.log(pageData.content)
+    const textRepeater = pageData.textRepeater;
+    // console.log(pageData)
     const siteSettings = data.siteSettings;
     let seo = pageData.seo;
     return (
@@ -41,7 +43,22 @@ export default function Page({ data }) {
                     <div className='flex justify-center my-4'>
                         <h2 className='lg:text-3xl 2xl:text-6xl text-pale-sky leading-[84px] text-center'>{pageData.featuredTitle}</h2>
                     </div>
-                    <TextComponent text={pageData.content} />
+                    <div className=''>
+                        {textRepeater ? 
+                            textRepeater.map((item, index) => (
+                                <div key={index} className='grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-24'>
+                                    {item.text ? 
+                                        <p className='text-2xl'>{item.text}</p>
+                                        : <div className=''>
+                                            <Image src={urlFor(item.asset).url()} height={1000} width={1000} className='object-cover' alt={item.alt ? item.alt : ''} />
+                                        </div>
+                                    }
+                                </div>
+                            )) :
+                            <TextComponent text={pageData.content} />
+                        }
+                    </div>
+                    
                 </section>
             </main>
             <Footer

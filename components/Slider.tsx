@@ -8,7 +8,7 @@ const Slider = ({ images, buttonText, href, autoScroll }) => {
     const length = images.length;
     // var autoScroll: boolean = false;
     let slideInterval;
-    let intervalTime: number = 6000
+    let intervalTime: number = 8000
 
     if (images.length < 2) {
         autoScroll = false

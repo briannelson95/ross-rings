@@ -6,9 +6,12 @@ import TextComponent from "../components/TextComponent";
 import { urlFor } from "../lib/modules";
 import { about } from "../lib/queries";
 import { client } from "../lib/sanity";
+import Image from "next/image";
+import Grid from "../components/Grid";
 
 export default function About({ data }) {
     let pageData = data.pageData[0];
+    let textRepeater = pageData.textRepeater;
     let siteSettings = data.siteSettings;
     console.log(pageData);
     return (
@@ -30,8 +33,24 @@ export default function About({ data }) {
                     </HeroBanner>
                 </section>
                 <section className="px-10 2xl:mx-52 lg:mx-10 lg:p-8">
-                    <TextComponent text={pageData.content} />
+                    <div className='grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-24 lg:mt-10'>
+                        {textRepeater ? 
+                            textRepeater.map((item, index) => (
+                                <div key={index} className=''>
+                                    {item.text ? 
+                                        <p className="text-2xl">{item.text}</p>
+                                        : <div className="aspect-[4/5]">
+                                            <Image src={urlFor(item.asset).url()} height={1000} width={1000} className='h-[450px] object-cover' alt={item.alt ? item.alt : ''} />
+                                        </div>
+                                    }
+                                </div>
+                            )) :
+                            <TextComponent text={pageData.content} />
+                        }
+                    </div>
                 </section>
+                
+                
             </main>
             <Footer
                 navigation={siteSettings.navigation}
