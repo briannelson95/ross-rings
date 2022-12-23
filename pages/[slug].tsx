@@ -46,7 +46,7 @@ export default function Page({ data }) {
                     <div className=''>
                         {textRepeater ? 
                             textRepeater.map((item, index) => (
-                                <div key={index} className='grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-24'>
+                                <div key={index} className='grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-24'>
                                     {item.text ? 
                                         <p className='text-2xl'>{item.text}</p>
                                         : <div className=''>
