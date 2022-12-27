@@ -72,6 +72,13 @@ export default function Page({ data }) {
 export const getServerSideProps = async function (context) {
     const { slug = "" } = context.query;
   
-    const data = await client.fetch(allPages, { slug });
+    const data = await client.fetch(allPages, { slug })
+
+    if (!data) {
+        return {
+            notFound: true,
+        }
+    }
+
     return { props: { data } };
 };
