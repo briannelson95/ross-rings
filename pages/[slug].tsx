@@ -69,7 +69,7 @@ export default function Page({ data }) {
     )
 }
 
-export const getServerSideProps = async function (context) {
+export async function getServerSideProps(context) {
     const { slug = "" } = context.query;
   
     const data = await client.fetch(allPages, { slug })
@@ -77,6 +77,10 @@ export const getServerSideProps = async function (context) {
     if (!data) {
         return {
             notFound: true,
+            redirect: {
+                permanent: false,
+                destination: "/",
+            },
         }
     }
 
