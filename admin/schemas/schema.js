@@ -17,7 +17,6 @@ import cta from './objects/cta'
 import gallery from './objects/gallery'
 import homepage from './documents/homepage'
 import featuredProduct from './objects/featuredProduct'
-import work from './documents/work'
 import testimonials from './documents/testimonials'
 import carousel from './objects/carousel'
 import figure from './objects/figure'
@@ -38,7 +37,6 @@ export default createSchema({
     post,
     products,
     homepage,
-    work,
     socialGallery,
 
     simpleBlockContent,

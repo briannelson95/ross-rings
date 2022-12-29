@@ -37,15 +37,6 @@ export default () =>
                         .documentId("homepage")
                 ),
             S.divider(),
-            S.listItem()
-                .title("My Work")
-                .icon(HiMenuAlt2)
-                .child(
-                    S.editor()
-                        .schemaType("work")
-                        .documentId("work")
-                ),
-            S.divider(),
             // add visial divider (optional)
             S.documentTypeListItem("page").title("Pages").icon(HiOutlineDocumentAdd),
             S.documentTypeListItem("products").title("Products").icon(HiOutlineShoppingCart),
