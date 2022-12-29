@@ -1,12 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { client } from "../lib/sanity";
 import { contact } from "../lib/queries";
 import SEO from '../components/SEO'
-import Image from "next/image";
 import { urlFor } from '../lib/modules'
-import Navbar from '../components/Navbar';
-import Button from '../components/Button';
-import Link from 'next/link';
 import Footer from '../components/Footer';
 import NewNav from '../components/NewNav';
 import ContactForm from '../components/ContactForm';
