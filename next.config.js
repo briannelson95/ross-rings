@@ -14,6 +14,15 @@ const nextConfig = {
   images: {
     domains: ['cdn.sanity.io'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/wp-admin',
+        destination: '/admin',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
