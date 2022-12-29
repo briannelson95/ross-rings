@@ -13,7 +13,7 @@ export default function About({ data }) {
     let pageData = data.pageData[0];
     let textRepeater = pageData.textRepeater;
     let siteSettings = data.siteSettings;
-    // console.log(pageData);
+    // console.log(siteSettings);
     return (
         <>
             <main>
