@@ -5,7 +5,7 @@ import TextComponent from "./TextComponent";
 
 const SingleProduct = ({ image, price, title, description, href }) => {
     return (
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="aspect-square">
                 <Image
                     src={urlFor(image).url()}
@@ -16,18 +16,20 @@ const SingleProduct = ({ image, price, title, description, href }) => {
                 />
             </div>
             <div className="text-finlandia">
-                <h1 className="text-6xl">
+                <h1 className="text-3xl lg:text-6xl ">
                     {title}
                 </h1>
-                <p className="text-4xl my-10">${price.toFixed(2)}</p>
-                <div className="mb-10">
+                <p className="text-4xl mt-6 lg:my-10">${price.toFixed(2)}</p>
+                <div className="lg:mb-10">
                     {description ? 
                         <TextComponent text={description} /> 
                         : 
                         <>No description about this product yet.</>
                     }
                 </div>
-                <Button href={href} text="Buy on Etsy" color={true} />
+                <div className="flex justify-center">
+                    <Button href={href} text="Buy on Etsy" color={true} />
+                </div>
             </div>
         </div>
     )

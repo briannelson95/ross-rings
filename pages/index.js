@@ -61,6 +61,7 @@ export default function Home({ data }) {
                         </div>
                     </HeroBanner>
                 </section>
+                <div className="mt-10 lg:hidden" />
                 <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
                     <Testimonials testimonials={testimonials} />
                 </section>

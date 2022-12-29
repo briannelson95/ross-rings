@@ -37,8 +37,8 @@ export default function Products({ data }) {
           />
         </section>
         <section className='text-center my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8'>
-          <h1 className='text-6xl text-finlandia mb-14'>{pageData.title}</h1>
-          <h2 className='lg:text-3xl text-pale-sky leading-[84px] text-center'>{pageData.featuredTitle}</h2>
+          <h1 className='text-6xl text-finlandia mt-6 lg:mt-0 '>{pageData.title}</h1>
+          <h2 className='lg:text-3xl text-pale-sky lg:leading-[84px] text-center'>{pageData.featuredTitle}</h2>
         </section>
         <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
           <Grid

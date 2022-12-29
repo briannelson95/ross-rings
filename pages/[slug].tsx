@@ -41,14 +41,14 @@ export default function Page({ data }) {
                 </section>
                 <section className="px-10 2xl:mx-52 lg:mx-10 lg:p-8">
                     <div className='flex justify-center my-4'>
-                        <h2 className='lg:text-3xl 2xl:text-6xl text-pale-sky leading-[84px] text-center'>{pageData.featuredTitle}</h2>
+                        <h2 className='lg:text-3xl 2xl:text-6xl text-pale-sky lg:leading-[84px] text-center'>{pageData.featuredTitle}</h2>
                     </div>
-                    <div className=''>
+                    <div className='grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-24 lg:mt-10'>
                         {textRepeater ? 
                             textRepeater.map((item, index) => (
-                                <div key={index} className='grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-24'>
+                                <div key={index} className=''>
                                     {item.text ? 
-                                        <p className='text-2xl'>{item.text}</p>
+                                        <p className='lg:text-2xl'>{item.text}</p>
                                         : <div className=''>
                                             <Image src={urlFor(item.asset).url()} height={1000} width={1000} className='object-cover' alt={item.alt ? item.alt : ''} />
                                         </div>
@@ -69,19 +69,44 @@ export default function Page({ data }) {
     )
 }
 
-export async function getServerSideProps(context) {
-    const { slug = "" } = context.query;
+// export async function getStaticPaths() {
+//     // When this is true (in preview environments) don't
+//     // prerender any static pages
+//     // (faster builds, but slower initial page load)
+//     if (process.env.SKIP_BUILD_STATIC_GENERATION) {
+//       return {
+//         paths: [],
+//         fallback: 'blocking',
+//       }
+//     }
   
-    const data = await client.fetch(allPages, { slug })
+//     // Call an external API endpoint to get posts
+//     const res = await client.fetch(allPages)
+//     const pages = await res.json()
+  
+//     // Get the paths we want to prerender based on posts
+//     // In production environments, prerender all pages
+//     // (slower builds, but faster initial page load)
+//     const paths = pages.map((page) => ({
+//       params: { id: page.id },
+//     }))
+  
+//     // { fallback: false } means other routes should 404
+//     return { paths, fallback: false }
+// }
+
+export async function getServerSideProps(context) {
+    const { res, query } = context;
+    const { slug = "" } = query;
+
+    const data = await client.fetch(allPages, { slug });
 
     if (!data) {
+        res.statusCode = 404;
         return {
             notFound: true,
-            redirect: {
-                permanent: false,
-                destination: "/",
-            },
-        }
+            props: {},
+        };
     }
 
     return { props: { data } };

@@ -85,7 +85,7 @@ export default function Page({ data }) {
                         </button>
                     </div>
                 : ''}
-                <div className="my-24" />
+                <div className="my-6 lg:my-24" />
                 <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
                     <SingleProduct
                         title={productData.title}
@@ -95,9 +95,9 @@ export default function Page({ data }) {
                         href={productData.link}
                     />
                 </section>
-                <section className="my-1 px-10 2xl:mx-52 lg:m-10 lg:px-8">
+                <section className="my-4 px-10 2xl:mx-52 lg:m-10 lg:px-8">
                     {relatedImages != undefined ? (
-                        <div className="grid grid-cols-4 gap-4">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                             {relatedImages.map((item, index) => (
                                 <div className="aspect-square" key={index}>
                                     <Image
