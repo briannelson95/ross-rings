@@ -1,5 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { HiOutlineCog, HiOutlineDocumentAdd, HiOutlineHome, HiOutlineShoppingCart, HiMenuAlt2 } from "react-icons/hi";
+import { HiOutlineCog, HiOutlineDocumentAdd, HiOutlineHome, HiOutlineShoppingCart, HiMenuAlt2, HiViewGridAdd } from "react-icons/hi";
 
 // Add schema types to hidden
 const hiddenDocTypes = listItem =>
@@ -9,6 +9,7 @@ const hiddenDocTypes = listItem =>
         "products",
         "home",
         "work",
+        "socialGallery"
     ].includes(
         listItem.getId()
     );
@@ -50,5 +51,14 @@ export default () =>
             S.documentTypeListItem("products").title("Products").icon(HiOutlineShoppingCart),
             S.divider(),
             
-            ...S.documentTypeListItems().filter(hiddenDocTypes)
+            ...S.documentTypeListItems().filter(hiddenDocTypes),
+            S.divider(),
+            S.listItem()
+                .title("Social Image Gallery")
+                .icon(HiViewGridAdd)
+                .child(
+                    S.editor()
+                        .schemaType("socialGallery")
+                        .documentId("socialGallery")
+                ),
         ])
