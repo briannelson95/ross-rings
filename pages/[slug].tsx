@@ -5,7 +5,8 @@ import { urlFor } from '../lib/modules';
 import Navbar from '../components/Navbar';
 import NewNav from '../components/NewNav';
 import HeroBanner from '../components/HeroBanner';
-import TextComponent from '../components/TextComponent';
+import {PortableText} from '@portabletext/react'
+import { RichTextComponent } from "../components/TextComponent";
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 import Image from 'next/image';
@@ -55,7 +56,7 @@ export default function Page({ data }) {
                                     }
                                 </div>
                             )) :
-                            <TextComponent text={pageData.content} />
+                            <PortableText value={pageData.content} components={RichTextComponent} /> 
                         }
                     </div>
                     

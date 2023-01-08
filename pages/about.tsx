@@ -2,12 +2,12 @@ import Footer from "../components/Footer";
 import HeroBanner from "../components/HeroBanner";
 import NewNav from "../components/NewNav";
 import SEO from "../components/SEO";
-import TextComponent from "../components/TextComponent";
 import { urlFor } from "../lib/modules";
 import { about } from "../lib/queries";
 import { client } from "../lib/sanity";
 import Image from "next/image";
-import Grid from "../components/Grid";
+import {PortableText} from '@portabletext/react'
+import { RichTextComponent } from "../components/TextComponent";
 
 export default function About({ data }) {
     let pageData = data.pageData[0];
@@ -45,7 +45,8 @@ export default function About({ data }) {
                                     }
                                 </div>
                             )) :
-                            <TextComponent text={pageData.content} />
+                            // <TextComponent text={} />
+                            <PortableText value={pageData.content} components={RichTextComponent} />                      
                         }
                     </div>
                 </section>
