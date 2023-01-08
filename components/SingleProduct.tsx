@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { urlFor } from "../lib/modules";
 import Button from "./Button";
-import TextComponent from "./TextComponent";
+import {PortableText} from '@portabletext/react'
+import { RichTextComponent } from "../components/TextComponent";
 
 const SingleProduct = ({ image, price, title, description, href }) => {
     return (
@@ -22,7 +23,7 @@ const SingleProduct = ({ image, price, title, description, href }) => {
                 <p className="text-4xl mt-6 lg:my-10">${price.toFixed(2)}</p>
                 <div className="lg:mb-10">
                     {description ? 
-                        <TextComponent text={description} /> 
+                        <PortableText value={pageData.content} components={RichTextComponent} /> 
                         : 
                         <>No description about this product yet.</>
                     }
