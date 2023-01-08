@@ -23,7 +23,7 @@ const SingleProduct = ({ image, price, title, description, href }) => {
                 <p className="text-4xl mt-6 lg:my-10">${price.toFixed(2)}</p>
                 <div className="lg:mb-10">
                     {description ? 
-                        <PortableText value={pageData.content} components={RichTextComponent} /> 
+                        <PortableText value={description} components={RichTextComponent} /> 
                         : 
                         <>No description about this product yet.</>
                     }
