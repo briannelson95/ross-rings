@@ -10,7 +10,7 @@ export default function Instagram({ items }){
               key={index}
               href={item.permalink}
               target='_blank'
-              
+              rel="noreferrer"
           >
               <div className="absolute w-full h-full overflow-hidden">
                   <Image
