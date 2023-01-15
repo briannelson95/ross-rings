@@ -12,7 +12,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['cdn.sanity.io'],
+    domains: ['cdn.sanity.io', 'scontent-bos5-1.cdninstagram.com', 'scontent-lga3-2.cdninstagram.com' ],
   },
   async redirects() {
     return [

@@ -13,13 +13,13 @@ export default function Grid({ items }){
                         key={index}
                         href={`/my-work/${item.slug.current}`}
                     >
-                        <div className="absolute w-full h-full">
+                        <div className="absolute w-full h-full overflow-hidden">
                             <Image
                                 src={urlFor(item.image).url()}
                                 alt={item.image.alt}
                                 height={2000}
                                 width={2000}
-                                className='w-full h-full object-cover'
+                                className='w-full h-full object-cover transition ease-in-out duration-300 hover:scale-110'
                             />
                         </div>
                         <div className={`relative h-full flex overflow-x-auto`}>

@@ -51,7 +51,7 @@ const Slider = ({ images, buttonText, href, autoScroll }) => {
                                     <h1 className='text-4xl xl:text-6xl lg:text-3xl text-center lg:text-left'>
                                         {item.caption}
                                     </h1>
-                                    <div className='text-center'>
+                                    <div className='text-center lg:text-left'>
                                         <Button text={buttonText} href={href} />
                                     </div>
                                 </div>

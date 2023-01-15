@@ -11,12 +11,16 @@ import NewNav from "../components/NewNav";
 import TextBox from "../components/TextBox";
 import Testimonials from "../components/Testimonials";
 import Slider from "../components/Slider";
+import Instagram from "../components/Instagram";
 
-export default function Home({ data }) {
+export default function Home({ data, images }) {
     const pageData = data.pageData[0];
     const siteSettings = data.siteSettings;
     const products = pageData.featuredProducts
     const testimonials = data.testimonials;
+    // console.log(feed.data[0])
+    let imgArr = images.slice(0,5)
+
     return (
         <>
             <SEO 
@@ -66,9 +70,7 @@ export default function Home({ data }) {
                     <Testimonials testimonials={testimonials} />
                 </section>
                 <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
-                    <Grid
-                        items={products}
-                    />
+                    <Instagram items={imgArr} />
                 </section>
         
                 
@@ -83,10 +85,21 @@ export default function Home({ data }) {
 
 export async function getServerSideProps() {
     const data = await client.fetch(homepage)
+
+    const url = `https://graph.instagram.com/me/media?fields=media_url,permalink,media_type&access_token=${process.env.INSTAGRAM_TOKEN}`
+    const igData = await fetch(url)
+    const feed = await igData.json()
+
+    const images = feed.data.filter(function (obj) {
+        return obj.media_type === "IMAGE";
+    });
+
+    // console.log(feed)
   
     return {
         props: {
-            data
+            data,
+            images
         }
     }
 }

@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 import NewNav from '../components/NewNav';
 import HeroBanner from '../components/HeroBanner';
 import {PortableText} from '@portabletext/react'
-import { RichTextComponent } from "../components/TextComponent";
+import TextComponent, { RichTextComponent } from "../components/TextComponent";
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 import Image from 'next/image';
@@ -40,12 +40,13 @@ export default function Page({ data }) {
                     >
                     </HeroBanner>
                 </section>
-                <section className="px-10 2xl:mx-52 lg:mx-10 lg:p-8">
+                <section className="px-10 2xl:mx-52 lg:mx-10 lg:p-8 lg:text-2xl">
                     <div className='flex justify-center my-4'>
                         <h2 className='lg:text-3xl 2xl:text-6xl text-pale-sky lg:leading-[84px] text-center'>{pageData.featuredTitle}</h2>
                     </div>
                     <div className='grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-24 lg:mt-10'>
-                        {textRepeater ? 
+                        <PortableText value={pageData.content} components={RichTextComponent} />
+                        {/* {textRepeater ? 
                             textRepeater.map((item, index) => (
                                 <div key={index} className=''>
                                     {item.text ? 
@@ -56,8 +57,8 @@ export default function Page({ data }) {
                                     }
                                 </div>
                             )) :
-                            <PortableText value={pageData.content} components={RichTextComponent} /> 
-                        }
+                            <TextComponent text={pageData.content} /> 
+                        } */}
                     </div>
                     
                 </section>

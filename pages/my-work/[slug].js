@@ -99,13 +99,13 @@ export default function Page({ data }) {
                     {relatedImages != undefined ? (
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                             {relatedImages.map((item, index) => (
-                                <div className="aspect-square" key={index}>
+                                <div className="aspect-square overflow-hidden" key={index}>
                                     <Image
                                         src={urlFor(item.asset._ref).url()}
                                         width={1000}
                                         height={1000}
                                         onClick={() => showImage(item)}
-                                        className='object-cover h-full w-full'
+                                        className='object-cover h-full w-full transition ease-in-out duration-300 hover:scale-110'
                                     />
                                 </div>
                             ))}

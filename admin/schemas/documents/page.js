@@ -27,21 +27,22 @@ export default {
             title: 'Main Content',
             type: 'blockContent',
         },
-        {
-            name: 'textRepeater',
-            title: 'Text Repeater',
-            type: 'array',
-            of: [
-                {type: 'repeaterBlocks'},
-                {type: 'textObject'},
-                {type: 'image'}
-            ],
-            description: 'Use this if you want the content to contain both Images and Text'
-        },
+        // {
+        //     name: 'textRepeater',
+        //     title: 'Text Repeater',
+        //     type: 'array',
+        //     of: [
+        //         {type: 'repeaterBlocks'},
+        //         {type: 'textObject'},
+        //         {type: 'image'}
+        //     ],
+        //     description: 'Use this if you want the content to contain both Images and Text'
+        // },
         {
             name: 'featuredTitle',
             title: 'Featured Title',
-            type: 'string'
+            type: 'string',
+            validation: Rule => Rule.max(96).warning('Try to keep this 96 characters or less.')
         },
         {
             name: 'filter',
