@@ -15,7 +15,7 @@ export default function About({ data, images }) {
     let textRepeater = pageData.textRepeater;
     let siteSettings = data.siteSettings;
     // console.log(siteSettings);
-    let imgArr = images.slice(0,5)
+    // let imgArr = images.slice(0,5)
     return (
         <>
             <main>
@@ -55,7 +55,7 @@ export default function About({ data, images }) {
                     
                 </section>
                 <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
-                    <Instagram items={imgArr} />
+                    <Instagram items={data.social[1].imageCarousel} />
                 </section>
                 
                 
@@ -71,18 +71,18 @@ export default function About({ data, images }) {
 export async function getServerSideProps() {
     const data = await client.fetch(about)
 
-    const url = `https://graph.instagram.com/me/media?fields=media_url,permalink,media_type&access_token=${process.env.INSTAGRAM_TOKEN}`
-    const igData = await fetch(url)
-    const feed = await igData.json()
+    // const url = `https://graph.instagram.com/me/media?fields=media_url,permalink,media_type&access_token=${process.env.INSTAGRAM_TOKEN}`
+    // const igData = await fetch(url)
+    // const feed = await igData.json()
 
-    const images = feed.data.filter(function (obj) {
-        return obj.media_type === "IMAGE";
-    });
+    // const images = feed.data.filter(function (obj) {
+    //     return obj.media_type === "IMAGE";
+    // });
   
     return {
         props: {
             data,
-            images
+            // images
         }
     }
 }
