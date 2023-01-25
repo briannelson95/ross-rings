@@ -18,8 +18,8 @@ export default function Home({ data, images }) {
     const siteSettings = data.siteSettings;
     const products = pageData.featuredProducts
     const testimonials = data.testimonials;
-    // console.log(feed.data[0])
-    let imgArr = images.slice(0,5)
+    // console.log(data.social[1].imageCarousel)
+    // let imgArr = images.slice(0,5)
 
     return (
         <>
@@ -70,7 +70,7 @@ export default function Home({ data, images }) {
                     <Testimonials testimonials={testimonials} />
                 </section>
                 <section className="my-2 px-10 2xl:mx-52 lg:m-10 lg:p-8">
-                    <Instagram items={imgArr} />
+                    <Instagram items={data.social[1].imageCarousel} />
                 </section>
         
                 
@@ -86,20 +86,20 @@ export default function Home({ data, images }) {
 export async function getServerSideProps() {
     const data = await client.fetch(homepage)
 
-    const url = `https://graph.instagram.com/me/media?fields=media_url,permalink,media_type&access_token=${process.env.INSTAGRAM_TOKEN}`
-    const igData = await fetch(url)
-    const feed = await igData.json()
+    // const url = `https://graph.instagram.com/me/media?fields=media_url,permalink,media_type&access_token=${process.env.INSTAGRAM_TOKEN}`
+    // const igData = await fetch(url)
+    // const feed = await igData.json()
 
-    const images = feed.data.filter(function (obj) {
-        return obj.media_type === "IMAGE";
-    });
+    // const images = feed.data.filter(function (obj) {
+    //     return obj.media_type === "IMAGE";
+    // });
 
     // console.log(feed)
   
     return {
         props: {
             data,
-            images
+            // images
         }
     }
 }

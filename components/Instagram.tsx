@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { urlFor } from "../lib/modules";
 
 export default function Instagram({ items }){
   return (
@@ -14,7 +15,7 @@ export default function Instagram({ items }){
           >
               <div className="absolute w-full h-full overflow-hidden">
                   <Image
-                      src={item.media_url}
+                      src={urlFor(item).url()}
                       alt={'image frm instagram'}
                       height={2000}
                       width={2000}
