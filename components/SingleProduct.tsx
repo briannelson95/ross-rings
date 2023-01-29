@@ -29,7 +29,7 @@ const SingleProduct = ({ image, price, title, description, href }) => {
                     }
                 </div>
                 <div className="flex justify-center lg:justify-start">
-                    <Button href={href} text="Buy on Etsy" color={true} />
+                    <Button href={href} text="Buy on Etsy" color target />
                 </div>
             </div>
         </div>

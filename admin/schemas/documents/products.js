@@ -24,17 +24,17 @@ export default {
             title: 'Price',
             type: 'number'
         },
-        {
-            name: 'type',
-            title: 'Product Type',
-            type: 'string',
-            options: {
-                list: [
-                    {title: 'Ring', value: 'Ring'},
-                    {title: 'Misc', value: 'Misc'}
-                ]
-            }
-        },
+        // {
+        //     name: 'type',
+        //     title: 'Product Type',
+        //     type: 'string',
+        //     options: {
+        //         list: [
+        //             {title: 'Ring', value: 'Ring'},
+        //             {title: 'Misc', value: 'Misc'}
+        //         ]
+        //     }
+        // },
         {
             name: 'slug',
             title: 'Slug',
